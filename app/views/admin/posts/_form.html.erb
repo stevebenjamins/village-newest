@@ -1,0 +1,28 @@
+<%= form_for([:admin, @post]) do |f| %>
+
+	<% if @post.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@post.errors.count, "error") %> prohibited this stefe from being saved:</h2>
+
+	    <ul>
+	    <% @post.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	<% end %>
+	
+	<div class="field">
+		<%= f.label :headline %>
+		<%= f.text_field :headline %>
+	</div>
+	<div class="field">
+		<%= f.label :url %>
+		<%= f.text_field :url, :autofocus => true %>
+	</div>
+
+	<div class="submit">
+		<%= f.submit %>
+	</div>
+
+<% end %>

@@ -1,0 +1,23 @@
+.sidebar { 
+	
+	img#logo { border: none; }
+	p { color: #5f696a; margin: 15px 0; font-size: 15px; 	}
+	hr { height: 1px; width: 150px; margin: 30px auto; background: #DDD; border: none;  }
+	a#contact { margin-top: 5px; color: #95a5a6; text-decoration: none; font-size: 13px; }
+	
+	/* Formstack */
+	
+	.fsBody .fsForm { border: none; margin: 20px 0 0 0 !important; background-color:#fff !important; box-shadow: none !important; position: relative; }
+	.fsBody .fsRowBody { padding: 0 2px !important; }
+	.fsLabel { display: none !important; }
+	.fsField { font-weight: 400 !important; border: 1px solid #ddd !important; outline: none; color: #7f8c8d !important; font-weight: normal; padding: 8px !important; font-size: 13px !important; width: 180px !important; background-image: none !important; }
+	.fsSubmitButton { font-weight: 500; background: #3498DB; color: #fff !important; font-size: 13px !important; margin: 0px; cursor: pointer; padding: 8px !important; margin-top: 5px !important; margin-left: 2px !important; width: 198px !important; border: none; -webkit-transition: background 0.2s; transition: background 0.2s; -moz-transition: background 0.2s; }
+	.fsFieldFocused { background-color:#fff !important; }
+	.fsSupporting { color: #7f8c8d; font-size: 13px; display: none; }
+	.fsFieldFocused div.fsSupporting,.fsFieldFocused label.fsRequiredLabel span {color:none;}
+	.fsForm .fsSubmit { padding: 0 !important; margin: 0 !important; background: #fff !important; }
+	.fsBody .fsForm .fsCell { padding-bottom: 0;}
+	.fsboxshadow {  }
+	.fsSubmitButton:hover { background: #2980B9; }
+	
+}

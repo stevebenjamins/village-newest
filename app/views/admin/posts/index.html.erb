@@ -1,0 +1,21 @@
+<div class='admin'>
+
+	<h3>New Post</h3>
+		<%= render 'form' %>
+
+	<% if notice %><p id="notice"><%= notice %></p><% end %>
+
+	<BR><BR>
+	<h3>Posts</h3>
+
+	<ul>
+		<% @posts.each do |post| %>
+			<LI class="<%= cycle("even", "odd") %>">
+				<%= link_to raw(post.headline) + " [#{post.clicks}]", post.url, :target => '_blank'  %>
+				<%= link_to "Edit", edit_admin_post_url(post), :class => 'meta'  %>
+				<%= link_to "Delete", admin_post_url(post), confirm: 'Are you sure?', method: :delete, :class => 'meta' %>
+			</LI>
+		<% end %>
+	</UL>
+	
+</div>

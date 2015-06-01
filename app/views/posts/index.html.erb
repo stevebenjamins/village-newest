@@ -1,0 +1,16 @@
+<div class="newsfeed">
+
+
+	<% @day_of_posts.sort.each do |day, posts| %>
+		<h3><%= newsfeed_date(day) %></h3>
+		
+		<ul>
+		<% for post in posts %>
+			<li><%= link_to raw(post.headline), out_url(post.id), :target => "_blank", :rel => 'nofollow' %></li>
+		<% end %>
+		</ul>
+	<% end %>
+	
+
+	
+</div>
