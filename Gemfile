@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.0.8'
-# gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+# gem 'pg'
 
 gem 'sass-rails', '~> 4.0.2'
 gem 'uglifier', '>= 1.3.0'
@@ -12,6 +12,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'groupdate'
 gem 'rails_12factor', group: :production
+gem 'will_paginate'
 
 group :doc do
   gem 'sdoc', require: false

@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   
   def index
-    @day_of_posts = Post.all.group_by{|x| x.created_at.strftime("%A, %b %d")} 
+    @day_of_posts = Post.all.limit(100).group_by{|x| x.created_at.strftime("%A, %b %d")}
   end
   
   def out
