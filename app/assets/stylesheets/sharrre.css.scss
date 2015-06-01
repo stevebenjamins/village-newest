@@ -1,12 +1,12 @@
 .sharrre { text-align: center;
 	.sharrre-button { border-radius: 1px; height: 40px; margin-top:5px; display: inline-block; padding: 0 10px; font-size: 18px; color: #95a5a6 !important; }
-	.twitter { @include background-image-retina(icon-twitter, png, 19px, 15px); background-repeat: no-repeat; background-position: 0 3px; width: 50px; display: inline-block;
+	.twitter { background: url("icon-twitter@2x.png"); background-size: 19px 15px; background-repeat: no-repeat; background-position: 0 3px; width: 50px; display: inline-block;
 		a { color: #95a5a6 !important;  text-decoration: none; font-size: 14px;
 			.count { padding: 5px 0 0 30px; } 
 			.share { text-indent: -9999em; }
 		}
 	}
-	.facebook {  @include background-image-retina(icon-facebook, png, 10px, 22px); background-repeat: no-repeat; background-position: 0 0%; width: 50px; margin-left: 15px; display: inline-block;
+	.facebook {  background: url("icon-facebook@2x.png"); background-size: 10px 22px; background-repeat: no-repeat; background-position: 0 0%; width: 50px; margin-left: 15px; display: inline-block;
 		a { color: #95a5a6 !important;  text-decoration: none; font-size: 14px;
 			.count { padding: 5px 0 0 22px; } 
 			.share { text-indent: -9999em; }
