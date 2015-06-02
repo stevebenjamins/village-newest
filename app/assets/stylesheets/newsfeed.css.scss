@@ -1,14 +1,16 @@
 .newsfeed {
 
-	h3 { font-size: 17px; font-weight: 600; margin: 0 0 10px 13px; color: #333; text-transform: uppercase; }
+	h3 { font-size: 15px; font-weight: 600; margin: 0 0 10px 13px; color: #7F8C8D; text-transform: uppercase; }
 	ul { list-style: none; margin:0 0 80px 0; padding: 0; 
 		li { font-size: 17px; color: #5f696a; margin: 0; line-height: 22px; position: relative;
+			strong { color: #333; display: block; font-size: 17px; margin-bottom: 3px; }
 			a { color: #5f696a; text-decoration: none; display: block; padding: 13px; 
-				span { font-size: 13px; color: #95A5A6; margin-left: 5px; }
+				span { font-size: 13px; color: #95A5A6; display: none; }
 			}
 			a:hover { background: #f7f7f7; }
 			span.clicks { position: absolute; left: -30px; top: 13px; width: 30px; border-radius: 2px; text-align: center; font-size: 12px; display: block; height: 20px; background: #ECF0F1; color: #95A5A6; }
 		}
 	}
+	ul:first-of-type li a { color: #7F8C8D; font-size: 16px; }
 	
 }

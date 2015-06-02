@@ -1,8 +1,6 @@
 <div class="newsfeed">
 
-
-	
-	<% @day_of_posts.sort.each do |day, posts| %>
+	<% @day_of_posts.each do |day, posts| %>
 		<h3><%= newsfeed_date(day) %></h3>
 		
 		<ul>
@@ -17,7 +15,5 @@
 		<% end %>
 		</ul>
 	<% end %>
-	
-
 	
 </div>
