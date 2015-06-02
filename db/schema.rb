@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601151913) do
+ActiveRecord::Schema.define(version: 20150602153546) do
 
   create_table "posts", force: true do |t|
     t.text     "headline"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20150601151913) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "clicks"
+    t.text     "byline"
   end
 
 end
