@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  default_scope { order('featured DESC, created_at DESC') }
+  default_scope { order('featured ASC, created_at DESC') }
 
   has_attached_file :image, 
     :styles => { :large => "1100x500#", :thumb => "100x100#" },
