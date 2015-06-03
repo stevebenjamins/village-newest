@@ -5,6 +5,7 @@
 	strong { color: #333; }
 	hr { height: 1px; width: 150px; margin: 30px auto; background: #DDD; border: none;  }
 	a#contact { margin-top: 5px; color: #95a5a6; text-decoration: none; font-size: 13px; }
+	.menu-toggle { display: none; }
 	
 	/* Formstack */
 	
@@ -22,3 +23,20 @@
 	.fsSubmitButton:hover { background: #2980B9; }
 	
 }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	.sidebar { text-align: left; padding: 20px 0; position: relative;
+		.mobile-toggle { background: #f7f7f7; margin: 20px 0; padding: 10px 20px; text-align: center; 
+			
+		}
+		.menu-toggle { display: none; position: absolute; top: 18px; right: 0; width: 30px; height: 30px; border: 1px solid #DDD; text-indent: -9999em; display: inline-block; background-image: asset-data-url("icon-hamburger-menu@2x.png"); background-size: 15px 15px; background-repeat: no-repeat; background-position: 50% 50%;  }
+		.fsForm .fsSubmit { background: #f7f7f7 !important; }
+		.fsBody .fsForm { background-color:#f7f7f7 !important; }
+		.fsField input { width: 100px !important; }
+		.fsBody { margin-bottom: 0 !important; }
+	}
+
+}
+

@@ -18,6 +18,13 @@
 
 $(document).ready(function(){
 	
+	// Mobile Menu
+	
+	$('.menu-toggle').click(function(){
+		$('.mobile-toggle').slideToggle("fast");
+	});	
+	// Sharrre
+	
 	$('.twitter').sharrre({
 	  share: {
 	    twitter: true

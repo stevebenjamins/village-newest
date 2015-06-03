@@ -2,6 +2,7 @@
 <html>
 <head>
 	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="//use.typekit.net/irv8fcc.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
 	<link rel="icon" type="image/png" href="<%= image_path('favicon.png') %>">	
@@ -23,24 +24,30 @@
 <body>
 
 <div class='wrapper'>
+
+	<div class="sidebar">
+		<%= link_to root_url do %><%= image_tag "logo@2x.png", :id => 'logo', :alt => "Village - Toronto News", :width => '88' %><% end %>
+		<a href="javascript:;" class="menu-toggle">Menu</a>
+		<div class="mobile-toggle">
+			<p>Today in Toronto</p>
+			<%= weekend_sign() %>
+			<hr>
+			<p><strong>Get our weekly email brief <BR>every Saturday morning. </strong></p>
+			<p>Over 3,000 Torontonians<br> already subscribed:</p>
+			<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
+			<hr>
+			<div class="sharrre">
+		  		<div class="twitter" data-url="http://www.itsonvillage.com" data-text="Village"></div>
+		  		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
+			</div>
+			<a href="mailto:steve@itsonvillage.com" id="contact">Contact</a>
+		</div>
+	</div>
+	
 	<div class='main'>
 		<%= yield %>
 	</div>
-	<div class="sidebar">
-		<%= link_to root_url do %><%= image_tag "logo@2x.png", :id => 'logo', :alt => "Village - Toronto News", :width => '88' %><% end %>
-		<p>Today in Toronto</p>
-		<%= weekend_sign() %>
-		<hr>
-		<p><strong>Get our weekly email brief <BR>every Saturday morning. </strong></p>
-		<p>Over 3,000 Torontonians<br> already subscribed:</p>
-		<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
-		<hr>
-		<div class="sharrre">
-	  		<div class="twitter" data-url="http://www.itsonvillage.com" data-text="Village"></div>
-	  		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
-		</div>
-		<a href="mailto:steve@itsonvillage.com" id="contact">Contact</a>
-	</div>
+	
 	<br class="clear">
 </div>
 
