@@ -1,8 +1,8 @@
 <% if posts.first %>
 	<h2><span><%= newsfeed_date(posts.first.created_at) %></span></h2>
 	<ul>
+		<!-- Featured Post -->
 		<% posts.each_with_index do |post, index| %>
-			<!-- Featured Post -->
 			<% if post.featured %>
 			<li class="featured">
 				<%= link_to out_url(post.id), :target => "_blank", :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
@@ -14,8 +14,12 @@
 				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
 			</li>
 
-			<!-- Other Posts -->
-			<% else %>
+			<% end %>
+		<% end %>
+
+		<!-- Other Posts -->
+		<% posts.each_with_index do |post, index| %>
+			<% if !post.featured %>
 			<li>
 				<%= link_to out_url(post.id), :target => "_blank", :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
 				<h3><%= raw(post.headline) %> <span><%= get_host_without_www(post.url) %></h3>
