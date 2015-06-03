@@ -31,7 +31,7 @@
 		.mobile-toggle { background: #f7f7f7; margin: 20px 0; padding: 10px 20px; text-align: center; 
 			
 		}
-		.menu-toggle { display: none; position: absolute; top: 18px; right: 0; width: 30px; height: 30px; border: 1px solid #DDD; text-indent: -9999em; display: inline-block; background-image: asset-data-url("icon-hamburger-menu@2x.png"); background-size: 15px 15px; background-repeat: no-repeat; background-position: 50% 50%;  }
+		.menu-toggle { position: absolute; top: 18px; right: 0; width: 30px; height: 30px; border: 1px solid #DDD; text-indent: -9999em; display: inline-block; background-image: asset-data-url("icon-hamburger-menu@2x.png"); background-size: 15px 15px; background-repeat: no-repeat; background-position: 50% 50%; display: none;  }
 		.fsForm .fsSubmit { background: #f7f7f7 !important; }
 		.fsBody .fsForm { background-color:#f7f7f7 !important; }
 		.fsField input { width: 100px !important; }
