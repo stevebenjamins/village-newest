@@ -8,7 +8,7 @@
 				<%= link_to out_url(post.id), :target => "_blank", :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
 				<%= image_tag post.image.url(:large) if post.image %>
 				
-				<h3><%= raw(post.headline) %> <span><%= get_host_without_www(post.url) %></h3>
+				<h3><%= raw(post.headline) %> <span class="domain"><%= get_host_without_www(post.url) %></h3>
 				<% end %>
 				<HR>
 				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
@@ -22,7 +22,7 @@
 			<% if !post.featured %>
 			<li>
 				<%= link_to out_url(post.id), :target => "_blank", :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
-				<h3><%= raw(post.headline) %> <span><%= get_host_without_www(post.url) %></h3>
+				<h3><%= raw(post.headline) %> <span class="domain"><%= get_host_without_www(post.url) %></h3>
 				<% end %>
 				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
 			</li>
