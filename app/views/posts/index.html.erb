@@ -1,18 +1,12 @@
-<div class="newsfeed">
+<div class="newsfeed"> 
 
-	<% @day_of_posts.each do |day, posts| %>
-		<h2><%= newsfeed_date(day) %></h2>
-		
-		<ul>
-		<% for post in posts %>
-			<li>
-				<h3><%= link_to raw(post.headline), out_url(post.id), :target => "_blank", :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) %></h3>
-				<p><%= raw(post.byline) %></p>
-				
-				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
-			</li>
-		<% end %>
-		</ul>
-	<% end %>
+	<%= render 'posts', :posts => @day_1 %>
+	<%= render 'posts', :posts => @day_2 %>
+	<%= render 'posts', :posts => @day_3 %>
+	<%= render 'posts', :posts => @day_4 %>
+	<%= render 'posts', :posts => @day_5 %>
+	<%= render 'posts', :posts => @day_6 %>
+	<%= render 'posts', :posts => @day_7 %>
 	
 </div>
+

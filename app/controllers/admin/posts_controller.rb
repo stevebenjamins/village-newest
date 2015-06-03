@@ -47,7 +47,7 @@ class Admin::PostsController < Admin::AdminController
   private
 
   def post_params
-    params.require(:post).permit(:headline, :byline, :url)
+    params.require(:post).permit(:headline, :byline, :url, :image, :featured)
   end  
   
 end

@@ -17,12 +17,16 @@
 		<%= f.text_field :headline, :autofocus => true %>
 	</div>
 	<div class="field">
-		<%= f.label :byline %>
-		<%= f.text_field :byline %>
-	</div>
-	<div class="field">
 		<%= f.label :url %>
 		<%= f.text_field :url %>
+	</div>
+	<div class="field">
+		<%= f.label :image %>
+	  	<%= f.file_field :image %>
+	</div>
+	<div class="field">
+		<%= f.label :featured %>
+	  	<%= f.check_box :featured %>
 	</div>
 
 	<div class="submit">

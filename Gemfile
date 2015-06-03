@@ -12,7 +12,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'groupdate'
 gem 'rails_12factor', group: :production
-gem 'will_paginate'
+gem "paperclip", "~> 4.2"
+gem "aws-sdk"
 
 group :doc do
   gem 'sdoc', require: false

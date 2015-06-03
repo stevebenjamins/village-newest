@@ -1,16 +1,28 @@
 .newsfeed {
 
-	h2 { font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #7F8C8D; text-transform: uppercase; }
+	h2 { text-align: center; font-size: 15px; font-weight: 600; margin: 0 0 5px 0; color: #7F8C8D; text-transform: uppercase; background-image: asset-data-url("spacer.png"); background-size: 1px 1px; background-repeat: repeat-x; background-position: 0 45%; 
+		span { background: #fff; display: inline-block; padding: 0 10px; }
+	}
 	ul { list-style: none; margin:0 0 80px 0; padding: 0; 
-		li { position: relative; padding: 13px 0;
-			h3 { margin: 0; font-size: 17px; padding-bottom: 5px; font-weight: 600; 
-				a { text-decoration: none; color: #333;  }
+		li { position: relative; 
+ 			a { text-decoration: none; color: #5f696a; padding: 13px 0; display: block;
+				h3 {   margin: 0; font-size: 17px; font-weight: 500;  }
+				span { font-size: 13px; color: #95A5A6; }
 			}
-			h3 a:hover { color: #3498DB; }
+			a:hover { color: #3498DB; 
+				span { color: #3498DB; }
+			}
 			p { font-size: 16px; color: #7F8C8D; line-height: 21px; margin: 0; 
 				a {  color: #7F8C8D; }
 			}
 			span.clicks { position: absolute; left: -30px; top: 13px; width: 30px; border-radius: 2px; text-align: center; font-size: 12px; display: block; height: 20px; background: #ECF0F1; color: #95A5A6; }
+		}
+		li.featured { padding: 13px 0;
+			a { padding: 0; }
+			h3 { font-size: 24px; text-align: center; margin: 10px 10% 20px 10%; }
+			p { font-size: 17px; }
+			img { margin: 0 0 10px 0; width: 550px; }
+			hr { margin: 20px 30% 7px 30%; height: 1px; border: none; background: #DDD; }
 		}
 	}
 	
