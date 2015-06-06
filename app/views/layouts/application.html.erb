@@ -29,11 +29,13 @@
 		<%= link_to root_url do %><%= image_tag "logo@2x.png", :id => 'logo', :alt => "Village - Toronto News", :width => '88' %><% end %>
 		<a href="javascript:;" class="menu-toggle">Menu</a>
 		<div class="mobile-toggle">
-			<p>Daily Toronto News</p>
-			<%= weekend_sign() %>
+			<p>Daily Toronto News
+				<% today = Date.today %>
+				<% if today.wday == 0 or today.wday == 6 or today.wday == 7 %><BR><span class="weekend">New posts Monday - Friday</span><% end %>
+			</p>
 			<hr>
 			<p><strong>Get our weekly email recap <BR>every Saturday morning. </strong></p>
-			<p>Join 3,000+ Torontonians<br> already subscribed:</p>
+			<p>Join 3,200+ Torontonians<br> already subscribed:</p>
 			<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
 			<hr>
 			

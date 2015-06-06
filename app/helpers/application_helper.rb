@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def newsfeed_date(day)
     if day.strftime("%A, %b %d") == Date.today.strftime("%A, %b %d")
-      "Today"
+      "Today in Toronto"
     elsif day.strftime("%A, %b %d") == Date.yesterday.strftime("%A, %b %d")
       "Yesterday"
     else
@@ -16,9 +16,5 @@ module ApplicationHelper
     host.start_with?('www.') ? host[4..-1] : host
   end
   
-  def weekend_sign
-    today = Date.today
-    content_tag(:p, "New posts Mon - Fri.") if today.wday == 0 or today.wday == 6 or today.wday == 7
-  end
 
 end
