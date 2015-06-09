@@ -1,6 +1,7 @@
 class Post < ActiveRecord::Base
   default_scope { order('created_at DESC') }
-
+  before_create :set_clicks    
+    
   has_attached_file :image, 
     :styles => { :large => "1100x500#", :thumb => "100x100#" },
     :storage => :s3,
@@ -12,4 +13,11 @@ class Post < ActiveRecord::Base
 
   validates_attachment_content_type :image, :content_type => ["image/jpg", "image/jpeg", "image/png", "image/gif"]
   
+  
+  private
+
+  def set_clicks
+    self.clicks = 0
+  end
+
 end

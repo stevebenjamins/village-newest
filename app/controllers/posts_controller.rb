@@ -41,7 +41,7 @@ class PostsController < ApplicationController
   
   def out
     @post = Post.find(params[:id])
-    @post.clicks =+ 1
+    @post.clicks = @post.clicks + 1
     @post.save
     respond_to do |format|
         format.html { redirect_to @post.url }
