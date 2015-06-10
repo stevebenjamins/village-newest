@@ -1,4 +1,4 @@
-.sharrre { text-align: center;
+.sharrre { position: absolute; left: 10px; top: 10px;
 	.sharrre-button { border-radius: 1px; height: 40px; margin-top:5px; display: inline-block; padding: 0 10px; font-size: 18px; color: #95a5a6 !important; }
 	.twitter { background-image: asset-data-url("icon-twitter@2x.png"); background-size: 19px 15px; background-repeat: no-repeat; background-position: 0 3px; width: 50px; display: inline-block;
 		a { color: #95a5a6 !important;  text-decoration: none; font-size: 14px;
@@ -6,10 +6,19 @@
 			.share { text-indent: -9999em; }
 		}
 	}
-	.facebook {  background-image: asset-data-url("icon-facebook@2x.png"); background-size: 10px 22px; background-repeat: no-repeat; background-position: 0 0%; width: 50px; margin-left: 15px; display: inline-block;
+	.facebook {  background-image: asset-data-url("icon-facebook@2x.png"); background-size: 10px 22px; background-repeat: no-repeat; background-position: 0 0%; width: 50px; margin-left: 75px; display: inline-block;
 		a { color: #95a5a6 !important;  text-decoration: none; font-size: 14px;
 			.count { padding: 5px 0 0 22px; } 
 			.share { text-indent: -9999em; }
 		}
 	}
 }
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	.sharrre { left: 5px; }
+	.twitter { width: 20px !important; text-indent: -999em; }
+	.facebook { width: 20px !important; text-indent: -999em; margin-left: 35px !important; }
+
+}
+
