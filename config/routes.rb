@@ -3,6 +3,7 @@ Village::Application.routes.draw do
   root :to => 'posts#index'
   get "/out/:id" => "posts#out", :as => :out
   get "admin" => "admin/posts#index"
+  get "thank-you-email" => "application#thanks", :as => :thanks
 
   namespace :admin do
     resources :posts
