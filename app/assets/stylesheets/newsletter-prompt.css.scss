@@ -28,10 +28,10 @@
 	.newsletter-prompt { height: 110px; 
 		.inner {  width: 100%; }
 		p { left: 10px; }
-		.fsBody .fsForm { top: 35px; width: 250px; left: 0px; }
+		.fsBody .fsForm { top: 35px; width: 250px; left: 0px; position: relative; }
 		.fsField { top: 20px; left: 10px !important; right: auto !important; width: 30px !important; }
 		.fsSubmitButton { top: 20px; left: 200px !important; right: auto !important; }
-
+		.close { top: 60px; }
 	}
 
 }
