@@ -1,6 +1,6 @@
-.newsletter-prompt { background: #f7f7f7; height: 60px;
+.newsletter-prompt { background: #f7f7f7; height: 60px; display: none; position: relative;
 	.inner { width: 640px; text-align: left; margin: 0 auto; position: relative; padding: 1px 0; }
-		
+	.close { position: absolute; top: 20px; right: 20px; text-indent: -9999em; background-image: asset-data-url("icon-close@2x.png"); background-size: 16px 16px; background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; }
 	p { color: #5f696a; position: absolute; top: 20px; margin: 0; font-size: 15px; z-index: 10; }
 	
 	/* Formstack */
@@ -10,7 +10,9 @@
 	.fsLabel { display: none !important; }
 	.fsField { font-weight: 400 !important; border: 1px solid #ddd !important; border-radius: 2px !important; outline: none; color: #7f8c8d !important; font-weight: normal; padding: 6px !important; font-size: 13px !important; top: 0; right: 78px; position: absolute; width: 180px !important; background-image: none !important; }
 	.fsSubmitButton { font-weight: 500; border-radius: 2px !important; background: #3498DB; color: #fff !important; font-size: 13px !important; margin: 0px; cursor: pointer; padding: 8px !important; position: absolute; top: 0; right: 0; width: 68px !important; border: none; -webkit-transition: background 0.2s; transition: background 0.2s; -moz-transition: background 0.2s; }
-	.fsFieldFocused { background-color:#f7f7f7 !important; }
+	.fsFieldFocused { background-color:#f7f7f7 !important; 
+		input {  border: 1px solid #AAA !important; }
+	}
 	.fsSupporting { color: #7f8c8d; font-size: 13px; display: none; }
 	.fsFieldFocused div.fsSupporting,.fsFieldFocused label.fsRequiredLabel span {color:none;}
 	.fsForm .fsSubmit { padding: 0 !important; margin: 0 !important; background: #f7f7f7 !important; }

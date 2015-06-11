@@ -23,6 +23,8 @@ $(document).ready(function(){
 	$('.menu-toggle').click(function(){
 		$('.mobile-toggle').slideToggle("fast");
 	});	
+	
+	
 	// Sharrre
 	
 	$('.twitter').sharrre({
