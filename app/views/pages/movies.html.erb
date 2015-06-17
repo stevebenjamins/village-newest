@@ -1,0 +1,61 @@
+<div class="movies">
+	
+	<h1>Outdoor Movies Summer 2015</h1>
+	<h3>Every outdoor movie playing in Toronto this summer.<BR>From 8 different festivals.</h3>
+	
+	<ul class="movie-list">
+		<h4><span>June 2015</span></h4>
+		<% @june_movies.each do |movie| %>
+		<li class="<%= cycle("odd","even") %>">
+			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<h2><%= movie.movie %></h2>
+			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
+			<a href="<%= movie.url %>" class='cta'>More Info</a>
+		</li>
+		<% end %>
+	</ul>
+	<br class="clear">
+	
+	<ul class="movie-list">
+		<h4><span>July 2015</span></h4>
+		<% reset_cycle() %>
+		<% @july_movies.each do |movie| %>
+		<li class="<%= cycle("odd","even") %>">
+			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<h2><%= movie.movie %></h2>
+			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
+			<a href="<%= movie.url %>" class='cta'>More Info</a>
+		</li>
+		<% end %>
+	</ul>
+	<br class="clear">
+	
+	<ul class="movie-list">
+		<h4><span>August 2015</span></h4>
+		<% reset_cycle() %>
+		<% @august_movies.each do |movie| %>
+		<li class="<%= cycle("odd","even") %>">
+			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<h2><%= movie.movie %></h2>
+			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
+			<a href="<%= movie.url %>" class='cta'>More Info</a>
+		</li>
+		<% end %>
+	</ul>
+	<br class="clear">
+	
+	<ul class="movie-list">
+		<h4><span>September 2015</span></h4>
+		<% reset_cycle() %>
+		<% @september_movies.each do |movie| %>
+		<li class="<%= cycle("odd","even") %>">
+			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<h2><%= movie.movie %></h2>
+			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
+			<a href="<%= movie.url %>" class='cta'>More Info</a>
+		</li>
+		<% end %>
+	</ul>
+	<br class="clear"><BR><BR><BR><BR><BR><BR><BR><BR>
+	
+</div>

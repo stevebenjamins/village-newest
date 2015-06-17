@@ -1,3 +1,4 @@
+html,body { height: 100%; }
 body { text-align: center; margin: 0; font-size: 16px; font-family: "proxima-nova",sans-serif; }
 
 .wrapper { width: 550px; text-align: left; margin: 0 auto; position: relative; }
@@ -9,18 +10,20 @@ body { text-align: center; margin: 0; font-size: 16px; font-family: "proxima-nov
 .three-col-mid { float: left; width: 28%; }
 .three-col-right { float: right; width: 28%; margin-left: 8%; }
 
-.main { float: right; width: 550px; text-align: left; }
-.sidebar { float: left; width: 250px; text-align: center; position: fixed; }
-
-
+.main { float: left; width: 550px; text-align: left; }
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-
-	body { margin: 10px 0 0 0; }
 
 	.wrapper { width: 95%; }
 
 	.main { float: none; width: 100%; }
 	.sidebar { float: none; width: 100%; position: relative; }
+
+	.three-col-left { float: none; width: 100%; margin-right: 0%; }
+	.three-col-mid { float: none; width: 100%; }
+	.three-col-right { float: none; width: 100%; margin-left: 0%; }
+
+	.two-col-left { float: none; width: 100%; margin-right: 0%; }
+	.two-col-right { float: none; width: 100%; }
 
 }

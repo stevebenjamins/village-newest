@@ -1,13 +1,14 @@
 Village::Application.routes.draw do
 
+  devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
   root :to => 'posts#index'
   get "/out/:id" => "posts#out", :as => :out
-  get "admin" => "admin/posts#index"
   get "thank-you-email" => "application#thanks", :as => :thanks
+  get "outdoor-movies-2015" => "pages#movies", :as => :movies
+  get "email-brief" => "pages#brief", :as => :brief
 
-  namespace :admin do
-    resources :posts
-  end
+  resources :posts
+  resources :comments
 
   # 301's
   get "archive" => redirect {"/"}

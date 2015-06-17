@@ -2,7 +2,7 @@ module ApplicationHelper
 
   def newsfeed_date(day)
     if day.strftime("%A, %b %d") == Date.today.strftime("%A, %b %d")
-      "Today in Toronto"
+      "Today"
     elsif day.strftime("%A, %b %d") == Date.yesterday.strftime("%A, %b %d")
       "Yesterday"
     else

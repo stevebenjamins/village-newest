@@ -36,7 +36,6 @@ class PostsController < ApplicationController
     to   = (Time.zone.now - 5.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_7 = Post.where(["created_at >= ? and created_at <= ?", from, to])
 
-
   end
   
   def out
@@ -48,10 +47,54 @@ class PostsController < ApplicationController
     end
   end
   
+  def new
+    @post = Post.new
+  end
+  
+  def create
+    @post = Post.new(post_params)
+    @post.user_id = current_user.id
+
+    respond_to do |format|
+      if @post.save
+        format.html { redirect_to root_url, notice: 'Created new post.' }
+      else
+        format.html { render action: "new" }
+      end
+    end    
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+    @posts = Post.all
+  end
+  
+  def update
+    @post = Post.find(params[:id])
+
+    respond_to do |format|
+      if @post.update_attributes(post_params)
+        format.html { redirect_to root_url, notice: 'Updated post.' }
+      else
+        format.html { render action: "edit" }
+      end
+    end
+  end
+ 
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+
+    respond_to do |format|
+      format.html { redirect_to root_url, notice: 'Deleted post.' }
+    end
+  end
+  
   private
 
   def post_params
-    params.require(:post).permit(:clicks)
+    params.require(:post).permit(:headline, :byline, :url, :image, :featured, :clicks, :user_id)
   end  
 
 end

@@ -4,10 +4,14 @@
 		span { background: #fff; display: inline-block; padding: 0 10px; }
 	}
 	ul { list-style: none; margin:0 0 80px 0; padding: 0; 
-		li { position: relative; 
- 			a { text-decoration: none; color: #5f696a; padding: 13px 0; display: block;
-				h3 {   margin: 0; font-size: 17px; font-weight: 500;  }
-				span.domain { font-size: 13px; color: #95A5A6; }
+		li { position: relative; padding: 13px 0; 
+			h3 {  margin: 0; font-size: 17px; font-weight: 500;  
+				a { text-decoration: none; color: #5f696a; }
+				span.headline { margin-right: 3px; }
+				span.comments { font-size: 12px; color: #95A5A6; display: inline-block; width: 75px;
+					a {  color: #95A5A6; }
+					a:hover { color: #3498DB; }
+				}
 			}
 			a:hover { color: #3498DB; 
 				span { color: #3498DB; }
@@ -16,14 +20,20 @@
 				a {  color: #7F8C8D; }
 			}
 			span.clicks { position: absolute; left: -30px; top: 13px; width: 30px; border-radius: 2px; text-align: center; font-size: 12px; display: block; height: 20px; background: #ECF0F1; color: #95A5A6; }
+			.meta { position: absolute; top: 13px; left: -50px; padding: 0 20px 10px 0; display: none;
+				a { display: block; text-align: right; color: #95A5A6; font-size: 13px; text-decoration: none; }
+			}
 		}
 		li.featured { padding: 13px 0;
-			a { padding: 0; }
+			a { padding: 0; 
+				span { text-align: center; }
+			}
 			h3 { font-size: 24px; text-align: center; margin: 10px 10% 20px 10%; }
 			p { font-size: 17px; }
 			img { margin: 0 0 10px 0; width: 550px; }
 			hr { margin: 20px 30% 7px 30%; height: 1px; border: none; background: #DDD; }
 		}
+		li:hover .meta { display: block;}
 	}
 	
 }

@@ -14,6 +14,9 @@ gem 'groupdate'
 gem 'rails_12factor', group: :production
 gem "paperclip", "~> 4.2"
 gem "aws-sdk"
+gem 'devise'
+gem 'omniauth-facebook'
+gem "cancan"
 
 group :doc do
   gem 'sdoc', require: false

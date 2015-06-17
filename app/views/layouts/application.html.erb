@@ -15,7 +15,10 @@
 	  ga('send', 'pageview');
 	 </script>
 	
-	<title>Village</title>
+	<title>
+		<%= @title if @title %>
+		<%= "Village - Toronto News" if !@title %>
+	</title>
 	<%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
@@ -25,34 +28,36 @@
 	
 
 </head>
-<body>
+<body class="<%= @body_class if @body_class %>" data-no-turbolink>
 
 <div class="header">
-	<%= link_to root_url do %><%= image_tag "logo@2x.png", :id => 'logo', :alt => "Village - Toronto News", :width => '88' %><% end %>
+	<%= link_to "Village - Toronto News", root_url, :id => 'logo' %>
 	<div class="sharrre">
   		<div class="twitter" data-url="http://www.itsonvillage.com" data-text="Village"></div>
   		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
 	</div>	
-	<a href="mailto:steve@itsonvillage.com" id="contact">Contact</a>
-	
-</div>
-
-<div class="newsletter-prompt">
-	<div class="inner">
-		<p>Get our weekly email recap every Saturday morning:</p>
-		<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
-	</div>
-	<a class="close" href="javascript:;">x</a>
-</div>
-
-<div class='wrapper'>
-	
-	<div class='main'>
-		<%= yield %>
-	</div>
-	
+	<ul>
+		<% if can? :create, Post %>
+			<li><%= link_to "New Post", new_post_url()  %> <span>|</span> </li>
+		<% end %>
+		<% if user_signed_in? %>
+			<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+		<% else %>
+		<!-- 	<li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>-->
+		<% end %>
+<!--		<li><%= link_to "Outdoor Movies 2015", movies_url() %>-->
+			<li><%= link_to "Weekly Email Brief", brief_url() %>
+		<li><a href="mailto:steve@itsonvillage.com" id="contact">Contact</a></li>
+	</ul>	
+	<a href="javascript:;" id="toggle-mobile-navigation">Menu</a>
 	<br class="clear">
 </div>
+
+<% if notice %><p class="notice"><%= notice %></p><% end %>
+<% if alert %><p class="alert"><%= alert %></p><% end %>
+
+<%= yield %>
+
 
 </body>
 </html>
