@@ -1,6 +1,7 @@
 .movies-body { background: #242b33 url("movies/bg.jpg") fixed; background-size: 1700px 1350px; background-repeat: no-repeat; background-position: center center;  
 	.header { max-width: 1700px; background: none; margin: 0 auto; border: none; -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none; 
 		#logo { display: inline-block; width: 87.5px; height: 30px; text-indent: -9999em; background-image: asset-data-url("logo@2x-light.png"); background-size: 87.5px 30px; background-repeat: no-repeat; background-position: 0 0%;  }
+		
 	}
 }
 
@@ -22,5 +23,42 @@
 		li.odd { clear: both; float: left;  }
 		li.even { float: right; }
 	}
+
+	.closing { border: 1px solid #DDD; margin: 140px 50px; padding: 20px 0 60px 0;
+		.fsBody .fsForm { box-shadow: none !important; }
+		.fsBody { }
+		.fsError { display: none !important; }
+		.fsEmbed .fsForm { border: none !important; background: none  !important; width: 560px; position: relative; }
+		.fsFormatEmail { position: absolute; top: 0px; font-size: 17px; width: 425px !important; left: 0px; background-image: none !important; border: 1px solid #DDD !important; outline: none !important; padding: 12px !important; font-weight: normal !important; }
+		.fsFieldFocused { background: none !important; }
+		.fsSubmit {  background-color: none !important; padding: 0 !important; }
+		.fsSubmit input {  right: 0; position: absolute; top: 0; cursor:pointer; background: #3498DB  !important; border: none !important; color: #fff !important; font-size: 17px; font-weight: 400; padding: 13px 17px 13px 17px !important; -webkit-transition: all 0.2s; -moz-transition: all 0.2s; transition: all 0.2s; border-radius: 4px; }
+		.fsSubmit input:hover { background: #2980B9 !important;  }
+	}	
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	.movies { width: 95%; padding-top: 20px;
+		h1 { font-size: 30px; }
+		h3 {  font-size: 18px; margin: 20px 30px; }
+	}
 	
+	ul.movie-list { width: 95%; 
+		li { width: 191px !important; padding-left: 135px !important;
+			img { width: 115px; }
+		}
+		li.odd { float: none !important; }
+		li.even { float: none !important; }
+	}
+	
+	.closing {
+		.fsEmbed .fsForm { width: 150px !important; top: 20px !important  }
+		.fsFormatEmail { width: 150px !important; left: 30px !important; padding: 4px !important; border-radius: 0; }
+		.fsSubmit input {  left: 60px !important; width: 100px; position: absolute; top: 60px !important; padding: 8px !important; }
+		
+	}
+	
+	a#toggle-mobile-navigation { background-color: transparent !important; }
+
 }

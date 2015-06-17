@@ -23,7 +23,7 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 	
-	<meta property="og:image" content="<%= asset_url("facebook-image.jpg") %>" />
+	<meta property="og:image" content="<%= asset_url("facebook-image.jpg") if @body_class != 'movies-body' %><%= asset_url("facebook-image-movies.jpg") if @body_class == 'movies-body' %>" />
 	<meta property="og:title" content="The best of Toronto news. Hand-picked daily." />
 	
 
@@ -37,15 +37,7 @@
   		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
 	</div>	
 	<ul>
-		<% if can? :create, Post %>
-			<li><%= link_to "New Post", new_post_url()  %> <span>|</span> </li>
-		<% end %>
-		<% if user_signed_in? %>
-			<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
-		<% else %>
-		<!-- 	<li><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>-->
-		<% end %>
-<!--		<li><%= link_to "Outdoor Movies 2015", movies_url() %>-->
+		<li><%= link_to "Outdoor Movies 2015", movies_url() %>
 			<li><%= link_to "Weekly Email Brief", brief_url() %>
 		<li><a href="mailto:steve@itsonvillage.com" id="contact">Contact</a></li>
 	</ul>	

@@ -15,8 +15,6 @@
 						<%= link_to raw(post.headline), out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %> 
 					</span>
 					<span class="comments"><%= get_host_without_www(post.url) %></span>
-					<!-- 
-					<span class="comments"><a href="#">2 Comments</a></span>-->
 				</h3>
 				<hr>
 				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
@@ -40,7 +38,6 @@
 						<%= link_to raw(post.headline), out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %>  
 					</span>
 					<span class="comments"><%= get_host_without_www(post.url) %></span>
-<!-- 					<span class="comments"><%= link_to "12 Comments", comments_url, :remote => true %></span>-->
 					</h3>
 				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
 				<% if can? :update, post %>

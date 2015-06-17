@@ -7,10 +7,10 @@
 		<h4><span>June 2015</span></h4>
 		<% @june_movies.each do |movie| %>
 		<li class="<%= cycle("odd","even") %>">
-			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<%= image_tag "movies/#{movie.movie.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}.jpg" %>
 			<h2><%= movie.movie %></h2>
 			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
-			<a href="<%= movie.url %>" class='cta'>More Info</a>
+			<a href="<%= movie.url %>" class='cta' target="_blank" rel="nofollow">More Info</a>
 		</li>
 		<% end %>
 	</ul>
@@ -21,10 +21,10 @@
 		<% reset_cycle() %>
 		<% @july_movies.each do |movie| %>
 		<li class="<%= cycle("odd","even") %>">
-			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<%= image_tag "movies/#{movie.movie.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}.jpg" %>
 			<h2><%= movie.movie %></h2>
 			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
-			<a href="<%= movie.url %>" class='cta'>More Info</a>
+			<a href="<%= movie.url %>" class='cta' target="_blank" rel="nofollow">More Info</a>
 		</li>
 		<% end %>
 	</ul>
@@ -35,10 +35,10 @@
 		<% reset_cycle() %>
 		<% @august_movies.each do |movie| %>
 		<li class="<%= cycle("odd","even") %>">
-			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<%= image_tag "movies/#{movie.movie.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}.jpg" %>
 			<h2><%= movie.movie %></h2>
 			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
-			<a href="<%= movie.url %>" class='cta'>More Info</a>
+			<a href="<%= movie.url %>" class='cta' target="_blank" rel="nofollow">More Info</a>
 		</li>
 		<% end %>
 	</ul>
@@ -49,13 +49,21 @@
 		<% reset_cycle() %>
 		<% @september_movies.each do |movie| %>
 		<li class="<%= cycle("odd","even") %>">
-			<%= image_tag "movies/movie-o-brother.jpg" %>
+			<%= image_tag "movies/#{movie.movie.downcase.strip.gsub(' ', '-').gsub(/[^\w-]/, '')}.jpg" %>
 			<h2><%= movie.movie %></h2>
 			<p><%= movie.date.strftime("%A, %B %e") %> at <%= movie.location %>.</p>
-			<a href="<%= movie.url %>" class='cta'>More Info</a>
+			<a href="<%= movie.url %>" class='cta' target="_blank" rel="nofollow">More Info</a>
 		</li>
 		<% end %>
 	</ul>
-	<br class="clear"><BR><BR><BR><BR><BR><BR><BR><BR>
+	<br class="clear">
+
+	<div class="closing">
+		<h3>Village: everything you need to know about Toronto in your inbox every Saturday morning.</h3>
+		<h3>Subscribe now:</h3>
+		<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
+		</h3>
+	</div>
 	
+
 </div>
