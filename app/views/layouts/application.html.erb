@@ -24,7 +24,7 @@
 	<%= csrf_meta_tags %>
 	
 	<meta property="og:image" content="<%= asset_url("facebook-image.jpg") if @body_class != 'movies-body' %><%= asset_url("facebook-image-movies.jpg") if @body_class == 'movies-body' %>" />
-	<meta property="og:title" content="The best of Toronto news. Hand-picked daily." />
+	<meta property="og:title" content="<%= "The best of Toronto news. Hand-picked daily." if @body_class != 'movies-body' %><%= "Every outdoor movie playing in Toronto this summer. From 8 different festivals." if @body_class == 'movies-body' %>" />
 	
 
 </head>
