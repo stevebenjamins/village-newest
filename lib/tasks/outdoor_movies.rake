@@ -7,8 +7,10 @@ task :outdoor_movies => [:environment] do
 
   CSV.foreach(file, :headers => true) do |row|
     movie = OutdoorMovie.new 
-    puts row[0].to_date
-    movie.date = row[0].to_date
+    one = row[0]
+    movie_day = one.sub '15', '2015'
+    puts movie_day.to_date
+    movie.date = movie_day.to_date
     movie.movie = row[1]
     movie.location = row[2]
     movie.festival = row[3]
