@@ -1,4 +1,4 @@
-.movies-body { background: #242b33 url("movies/bg.jpg") fixed; background-size: 1700px 1350px; background-repeat: no-repeat; background-position: center center;  
+.movies-body { background: #242b33 asset-data-url("movies/bg.jpg") fixed; background-size: 1700px 1350px; background-repeat: no-repeat; background-position: center center;  
 	.header { max-width: 1700px; background: none; margin: 0 auto; border: none; -webkit-box-shadow: none; box-shadow: none; -moz-box-shadow: none; 
 		#logo { display: inline-block; width: 87.5px; height: 30px; text-indent: -9999em; background-image: asset-data-url("logo@2x-light.png"); background-size: 87.5px 30px; background-repeat: no-repeat; background-position: 0 0%;  }
 		
