@@ -8,7 +8,7 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.headline
-        xml.categories get_host_without_www(post.url)
+        xml.category get_host_without_www(post.url)
         xml.pubDate post.created_at.to_s(:rfc822)
         xml.link post.url
       end
