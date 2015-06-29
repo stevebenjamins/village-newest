@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
       user.name = auth.info.name   # assuming the user model has a name
       user.profile_picture = auth.info.image # assuming the user model has an image
       user.writer = false
+      user.admin = false
     end
   end
 

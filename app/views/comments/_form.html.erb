@@ -1,0 +1,28 @@
+<div class='comment-form'>
+
+	<%= form_for(@comment, remote: true) do |f| %>
+
+		<% if @comment.errors.any? %>
+		  <div id="error_explanation">
+		    <p><strong><%= pluralize(@post.errors.count, "error") %> prohibited this comment from being saved:</strong></p>
+
+		    <ul>
+		    <% @comment.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
+	
+		<%= f.hidden_field :post_id, :value => @post.id %>
+		<div class="field">
+			<%= f.text_area :comment %>
+		</div>
+
+		<div class="submit">
+			<%= f.submit "Add Your Comment" %>
+		</div>
+
+	<% end %>
+
+</div>

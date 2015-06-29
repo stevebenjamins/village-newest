@@ -254,6 +254,7 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
 
-  config.omniauth :facebook, "122258094773465", "9479f165838484c3b7336ece8794c0d6"
-  
+  Rails.application.config.middleware.use OmniAuth::Builder do
+     provider :facebook, AppConfig['facebook_api_key'], AppConfig['facebook_api_secret']           
+  end  
 end

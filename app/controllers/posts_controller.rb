@@ -1,5 +1,10 @@
 class PostsController < ApplicationController
-  
+
+  def feed
+    @posts = Post.all
+    render :template => 'posts/feed.rss.builder', :layout => false
+  end
+    
   def index
     
     # Day 1
@@ -32,8 +37,8 @@ class PostsController < ApplicationController
     @day_6 = Post.where(["created_at >= ? and created_at <= ?", from, to])
     
     # Day 7
-    from = (Time.zone.now - 6.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
-    to   = (Time.zone.now - 5.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    from = (Time.zone.now - 15.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    to   = (Time.zone.now - 7.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_7 = Post.where(["created_at >= ? and created_at <= ?", from, to])
 
   end

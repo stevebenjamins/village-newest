@@ -2,6 +2,26 @@
 	<div class="close-comments-pane">X</div>
 	<div class="heading">
 		<h3>Comments</h3>
-		<p><a href="#">"The price is a bit high, but it’s worth it for the peace of mind." Why these 12 riders pay $27.50 to ride the UP Express. </a></p>
+		<p><a href="#"><%= raw(@post.headline) %></a></p>
 	</div>
+	
+	<% if current_user %>
+		<%= render 'comments/form' %>
+	<% else %>
+		<p style="margin-top: 30px"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> to add a comment.</p>
+	<% end %>
+	
+	<ul id="list-comments">
+	<% if @post.comments.count != 0 %>
+		<% @post.comments.each do |comment| %>
+			<%= render 'comments/comment', :comment => comment %>
+		<% end %>
+	<% else %>
+		<p><em>No comments yet— you should add one!</em></p>
+	<% end %>
+</ul>
+	
+
+	<br class="clear"><br><br>
+
 </div>

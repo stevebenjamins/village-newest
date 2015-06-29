@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
   default_scope { order('created_at DESC') }
   before_create :set_clicks    
     
+  has_many :comments
+
   has_attached_file :image, 
     :styles => { :large => "1100x500#", :thumb => "100x100#" },
     :storage => :s3,

@@ -9,6 +9,7 @@ Village::Application.routes.draw do
 
   resources :posts
   resources :comments
+  get 'feed' => 'posts#feed'
 
   # 301's
   get "archive" => redirect {"/"}

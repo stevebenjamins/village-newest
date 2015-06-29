@@ -21,7 +21,7 @@
 				<% if can? :update, post %>
 					<div class="meta">
 						<%= link_to "Edit", edit_post_url(post)  %>
-						<%= link_to "Delete", post_url(post), confirm: 'Are you sure?', method: :delete %>
+							<%= link_to "Delete", post_url(post), confirm: 'Are you sure?', method: :delete %>
 					</div>
 				<% end %>					
 			</li>
