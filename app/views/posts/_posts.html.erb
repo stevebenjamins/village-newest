@@ -17,7 +17,7 @@
 					<span class="comments"><%= get_host_without_www(post.url) %></span>
 				</h3>
 				<hr>
-				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
+				<span class="clicks"><%= post.clicks %></span>
 				<% if can? :update, post %>
 					<div class="meta">
 						<%= link_to "Edit", edit_post_url(post)  %>
@@ -39,7 +39,7 @@
 					</span>
 					<span class="comments"><%= get_host_without_www(post.url) %></span>
 					</h3>
-				<% if params[:stats] %><span class="clicks"><%= post.clicks %></span<% end %>
+				<span class="clicks"><%= post.clicks %></span>
 				<% if can? :update, post %>
 					<div class="meta">
 						<%= link_to "Edit", edit_post_url(post)  %>
