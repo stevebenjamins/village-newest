@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     
     # Day 1
-    from   = (Time.zone.now - 1.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_1 = Post.where(["created_at >= ?", from])
         
     # Day 2
