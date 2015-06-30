@@ -8,7 +8,7 @@
 	<% if current_user %>
 		<%= render 'comments/form' %>
 	<% else %>
-		<p style="margin-top: 30px"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %> to add a comment.</p>
+		<p style="margin-top: 30px"><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook) %> to add a comment.</p>
 	<% end %>
 	
 	<ul id="list-comments">

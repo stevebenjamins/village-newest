@@ -8,7 +8,7 @@ class PostsController < ApplicationController
   def index
     
     # Day 1
-    from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    from   = (Time.zone.now - 1.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_1 = Post.where(["created_at >= ?", from])
         
     # Day 2
@@ -37,8 +37,8 @@ class PostsController < ApplicationController
     @day_6 = Post.where(["created_at >= ? and created_at <= ?", from, to])
     
     # Day 7
-    from = (Time.zone.now - 15.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
-    to   = (Time.zone.now - 7.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    from = (Time.zone.now - 6.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
+    to   = (Time.zone.now - 5.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_7 = Post.where(["created_at >= ? and created_at <= ?", from, to])
 
   end
@@ -62,7 +62,7 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to root_url, notice: 'Created new post.' }
+        format.html { redirect_to new_post_url, notice: 'Created new post.' }
       else
         format.html { render action: "new" }
       end

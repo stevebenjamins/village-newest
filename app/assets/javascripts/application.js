@@ -24,7 +24,9 @@ $(document).ready(function(){
 		$('.mobile-toggle').slideToggle("fast");
 	});	
 	
-	
+	$("#show-post-stats").click(function(){
+		$('span.clicks').toggle();
+	});
 	// Sharrre
 	
 	$('.twitter').sharrre({

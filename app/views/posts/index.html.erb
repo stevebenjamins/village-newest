@@ -1,27 +1,7 @@
-<div class="newsletter-prompt">
-	<div class="inner">
-		<p>The best of Toronto news in your inbox every week:</p>
-		<script type="text/javascript" src="https://www.formstack.com/forms/js.php?1818289-3orQqeUtuK-v3"></script>
-	</div>
-	<a class="close" href="javascript:;">x</a>
+<div class="newsfeed"> 
+
+	<%= render 'posts', :posts => @day_1 %>
+
 </div>
-
-<div class='wrapper'>
-	
-	<div class='main'>
-		<div class="newsfeed"> 
-
-			<%= render 'posts', :posts => @day_1 %>
-			<%= render 'posts', :posts => @day_2 %>
-			<%= render 'posts', :posts => @day_3 %>
-			<%= render 'posts', :posts => @day_4 %>
-			<%= render 'posts', :posts => @day_5 %>
-			<%= render 'posts', :posts => @day_6 %>
-			<%= render 'posts', :posts => @day_7 %>
-
-		</div>
-	</div>
-	
-	<br class="clear">
-</div>
+<br class="clear">
 

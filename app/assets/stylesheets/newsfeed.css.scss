@@ -19,7 +19,7 @@
 			p { font-size: 16px; color: #7F8C8D; line-height: 21px; margin: 0; 
 				a {  color: #7F8C8D; }
 			}
-			span.clicks { position: absolute; left: -30px; top: 13px; width: 30px; border-radius: 2px; text-align: center; font-size: 12px; display: block; height: 20px; background: #ECF0F1; color: #95A5A6; }
+			span.clicks { display: none; position: absolute; left: -30px; top: 13px; width: 30px; border-radius: 2px; text-align: center; font-size: 12px; display: block; height: 20px; background: #ECF0F1; color: #95A5A6; }
 			.meta { position: absolute; top: 13px; left: -50px; padding: 0 20px 10px 0; display: none;
 				a { display: block; text-align: right; color: #95A5A6; font-size: 13px; text-decoration: none; }
 			}
@@ -37,6 +37,7 @@
 	}
 	
 }
+
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 

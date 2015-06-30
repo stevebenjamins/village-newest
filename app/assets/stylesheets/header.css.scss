@@ -2,13 +2,18 @@
 	
 	#logo { display: inline-block; width: 87.5px; height: 30px; text-indent: -9999em; background-image: asset-data-url("logo@2x.png"); background-size: 87.5px 30px; background-repeat: no-repeat; background-position: 0 0%;  }
 
-	ul { position: absolute; top: 5px; right: 25px;
+	ul.nav { position: absolute; top: 5px; right: 25px; }
+	ul.user-nav { position: absolute; top: 5px; left: 25px; }
+	ul { margin: 0; padding: 0;
 		li { display: inline; 
-			a { color: #95a5a6; text-decoration: none; font-size: 15px; margin-left: 15px; }
+			a { color: #95a5a6; text-decoration: none; font-size: 15px; margin: 20px 0 0 15px; display: inline-block; }
 			span { color: #95a5a6; margin-left: 15px; }
 		}
+		li#mobile-only a { display: none; }
 	}
 	a#toggle-mobile-navigation { display: none; }
+
+	a#facebook-login { margin: 5px 0 15px 0; padding: 10px 15px 10px 35px; border-radius: 5px; font-size: 14px; color: #3498db; font-weight: 600; border: 1px solid #DDD; text-decoration: none; display: inline-block; background-image: asset-data-url("facebook-login.png"); background-size: 20px 20px; background-repeat: no-repeat; background-position: 5px 50%; }
 	
 }
 
@@ -17,12 +22,14 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	.header { 
-		ul { width: 100%; position: relative; display: block; top: 1rem; right: 0 !important; display: none; margin: 0 !important; padding: 0 !important;
+		ul.user-nav { display: none; }
+		ul.nav { width: 100%; position: relative; display: block; top: 1rem; right: 0 !important; display: none; margin: 0 !important; padding: 0 !important;
 			li { display: block; 
-				a { display: block; width: 96%; padding: 2%; background: #f7f7f7; border-bottom: 1px solid #fff; margin-left: 0; }
+				a { display: block; width: 96%; padding: 2%; background: #f7f7f7; border-bottom: 1px solid #fff; margin: 0; }
 				a:active { color: #3498DB; } 
 				span { display: none; }
 			}
+			li#mobile-only a { display: block; }
 			li:last-child a { border: none; }
 		}
 		a#toggle-mobile-navigation { display: inline-block; padding: 10px; border-radius: 2px; text-indent: -9999em; height: 15px; width: 15px; background: #f7f7f7; background-image: asset-data-url("icon-hamburger-menu@2x.png"); background-size: 15px 15px;   background-repeat: no-repeat; background-position: 50% 50%; color: #7F8C8D; position: absolute; right: 0.5em; top: 0.75em; }

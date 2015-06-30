@@ -31,32 +31,69 @@
 
 <div class="header">
 	<%= link_to "Village - Toronto News", root_url, :id => 'logo' %>
-	<div class="sharrre">
-  		<div class="twitter" data-url="http://www.itsonvillage.com" data-text="Village"></div>
-  		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
-	</div>	
-	<ul>
+	<ul class="user-nav">
 		<% if can? :create, Post %>
 			<li><%= link_to "New Post", new_post_url()  %> <span>|</span> </li>
 		<% end %>
 		<% if user_signed_in? %>
 			<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
 		<% else %>
-			<li style="display:none;"><%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+			<li><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook), :id => 'facebook-login' %></li>
 		<% end %>
-		<li><%= link_to "Outdoor Movies 2015", movies_url() %>
-			<li><%= link_to "Weekly Email Brief", brief_url() %>
+	</ul>
+
+	<ul class="nav">
+		<% if can? :create, Post %>
+			<li id="mobile-only"><%= link_to "New Post", new_post_url()  %></li>
+		<% end %>
+		<% if user_signed_in? %>
+			<li id="mobile-only"><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+		<% else %>
+			<li id="mobile-only"><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook) %></li>
+		<% end %>
 		<li><a href="mailto:steve@itsonvillage.com" id="contact">Contact</a></li>
 	</ul>	
 	<a href="javascript:;" id="toggle-mobile-navigation">Menu</a>
 	<br class="clear">
 </div>
 
-<% if notice %><p class="notice"><%= notice %></p><% end %>
-<% if alert %><p class="alert"><%= alert %></p><% end %>
+<!--<div class="wrapper">
 
-<%= yield %>
+	<div class="sidebar">
+		<%= link_to "Village - Toronto News", root_url, :id => 'logo' %>
+		<p class="slogan">The best of Toronto news.<BR>
+		Hand-picked daily. </p>
 
+		<% if user_signed_in? %>
+			<ul class="user-links">
+				<% if can? :create, Post %>
+					<li><%= link_to "New Post", new_post_url()  %></li>
+					<li><%= link_to "Show Clicks", "javascript:;", :id => 'show-post-stats'  %></li>
+				<% end %>
+				<li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+			</ul>
+		<% else %>
+		<% end %>
+
+		<div class="sharrre">
+	  		<div class="twitter" data-url="http://www.itsonvillage.com" data-text="Village"></div>
+	  		<div class="facebook" data-url="http://www.itsonvillage.com" data-text="Village"></div>
+		</div>	
+		
+	</div>
+
+	<div class="main">
+-->
+
+<div class="wrapper">
+	<div class="main">
+		<% if notice %><p class="notice"><%= notice %></p><% end %>
+		<% if alert %><p class="alert"><%= alert %></p><% end %>
+
+		<%= yield %>
+
+	</div>
+</div>
 
 </body>
 </html>

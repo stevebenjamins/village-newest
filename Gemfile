@@ -17,6 +17,7 @@ gem "aws-sdk"
 gem 'devise'
 gem 'omniauth-facebook'
 gem "cancan"
+gem 'intercom-rails'
 
 group :doc do
   gem 'sdoc', require: false

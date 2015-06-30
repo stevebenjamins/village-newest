@@ -1,5 +1,5 @@
 html,body { height: 100%; }
-body { text-align: center; margin: 0; font-size: 16px; font-family: "proxima-nova",sans-serif; }
+body { text-align: center; margin: 5px 0 0 0; font-size: 16px; font-family: "proxima-nova",sans-serif; }
 
 .wrapper { width: 550px; text-align: left; margin: 0 auto; position: relative; }
 
@@ -10,7 +10,9 @@ body { text-align: center; margin: 0; font-size: 16px; font-family: "proxima-nov
 .three-col-mid { float: left; width: 28%; }
 .three-col-right { float: right; width: 28%; margin-left: 8%; }
 
-.main { float: left; width: 550px; text-align: left; }
+.main { float: right; width: 550px; text-align: left; }
+.sidebar { float: left; width: 200px; text-align: center; position: fixed; }
+
 
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 

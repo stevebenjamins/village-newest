@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$('#toggle-mobile-navigation').click(function(){
-		$('.header ul').slideToggle("fast");
+		$('.header ul.nav').slideToggle("fast");
 	});
 
 	// Ensure the nav is visible when the window is resized (even if it's been set to hidden)
