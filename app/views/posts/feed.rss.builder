@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title @featured_post.headline
+    xml.title "#{@featured_post.headline} <span>#{get_host_without_www(@featured_post.url)}</span>"
     xml.description @featured_post.image.url(:large)
     xml.link @featured_post.url
     
