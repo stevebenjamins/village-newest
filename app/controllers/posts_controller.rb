@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   def feed
     # @posts = Post.all
     from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
-    @featured_post = Post.where(["created_at >= ? and featured == ?", from, true]).first
+    @featured_post = Post.where(["created_at >= ? and featured = ?", from, true]).first
     @posts = Post.find(:all, :conditions => ["id != ?", @featured_post.id])
     render :template => 'posts/feed.rss.builder', :layout => false
   end
