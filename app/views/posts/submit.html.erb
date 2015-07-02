@@ -1,0 +1,13 @@
+<% if current_user %>
+	
+	<BR><BR>
+	<h3>Submit a Story</h3>
+	<p>All submitted stories are reviewed within 24 hours.</p><br>
+
+	<script type="text/javascript" src="https://stevebenjamins.formstack.com/forms/js.php/untitled_form_17?email=<%= current_user.email %>"></script>
+
+<% else %>
+
+	<center><br><br><h1>You must login to submit a story.</h1></center>
+
+<% end %>

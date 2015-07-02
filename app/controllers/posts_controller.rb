@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @posts = Post.find(:all, :conditions => ["id != ?", @featured_post.id])
     render :template => 'posts/feed.rss.builder', :layout => false
   end
+  
+  def submit
+  
+  end  
     
   def index
     

@@ -52,6 +52,7 @@
 		<% else %>
 			<li id="mobile-only"><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook) %></li>
 		<% end %>
+		<li><%= link_to "Submit a Story", submit_a_story_url() %></li>
 		<li><a href="mailto:steve@itsonvillage.com" id="contact">Contact</a></li>
 	</ul>	
 	<a href="javascript:;" id="toggle-mobile-navigation">Menu</a>

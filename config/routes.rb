@@ -6,6 +6,7 @@ Village::Application.routes.draw do
   get "thank-you-email" => "application#thanks", :as => :thanks
   get "outdoor-movies-2015" => "pages#movies", :as => :movies
   get "email-brief" => "pages#brief", :as => :brief
+  get "submit-a-story" => "posts#submit", :as => :submit_a_story
 
   resources :posts
   resources :comments

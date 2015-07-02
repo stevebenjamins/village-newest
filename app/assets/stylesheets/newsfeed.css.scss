@@ -43,17 +43,17 @@
 		
 		/* Formstack */
 
-		.fsBody .fsForm { z-index: 0; border: none; margin: 0 !important; background-color:#f7f7f7 !important; box-shadow: none !important; position: absolute; top: 65px;  }
+		.fsBody .fsForm { z-index: 0; border: none; margin: 0 !important; background-color:#fff !important; box-shadow: none !important; position: absolute; top: 65px;  }
 		.fsBody .fsRowBody { padding: 0 2px !important; }
 		.fsLabel { display: none !important; }
 		.fsField { font-weight: 400 !important; border: 1px solid #ddd !important; border-radius: 2px !important; outline: none; color: #7f8c8d !important; font-weight: normal; padding: 10px !important; font-size: 15px !important; width: 300px !important; background-image: none !important; }
 		.fsSubmitButton { font-weight: 500; border-radius: 2px !important; background: #3498DB; color: #fff !important; font-size: 14px !important; margin: 0px; cursor: pointer; padding: 11.5px !important; position: absolute; top: 0; left: 330px; width: 88px !important; border: none; -webkit-transition: background 0.2s; transition: background 0.2s; -moz-transition: background 0.2s; }
-		.fsFieldFocused { background-color:#f7f7f7 !important; 
+		.fsFieldFocused { background-color:#fff !important; 
 			input {  border: 1px solid #AAA !important; }
 		}
 		.fsSupporting { color: #7f8c8d; font-size: 13px; display: none; }
 		.fsFieldFocused div.fsSupporting,.fsFieldFocused label.fsRequiredLabel span {color:none;}
-		.fsForm .fsSubmit { padding: 0 !important; margin: 0 !important; background: #f7f7f7 !important; }
+		.fsForm .fsSubmit { padding: 0 !important; margin: 0 !important; background: #fff !important; }
 		.fsBody .fsForm .fsCell { padding-bottom: 0;}
 		.fsboxshadow {  }
 		.fsSubmitButton:hover { background: #2980B9; }
@@ -70,6 +70,12 @@
 		li.featured {
 			img { max-width: 100%; }
  		}
+		
+		.newsletter { padding-bottom: 10px; 
+			.fsBody .fsForm { width: 280px; }
+			.fsSubmitButton { left: 200px !important; }
+			.fsField { width: 180px !important; }
+		}
 		
 	}
 
