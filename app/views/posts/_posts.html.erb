@@ -37,7 +37,7 @@
 					<span class="headline">
 						<%= link_to raw(post.headline), out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %>  
 					</span>
-					<span class="comments"><%= link_to "#{post.comments.count} Comments", comment_url(post.id), :remote => true %></span>
+					<span class="comments"><%= get_host_without_www(post.url) %></span>
 					</h3>
 				<span class="clicks"><%= post.clicks %></span>
 				<% if can? :update, post %>
