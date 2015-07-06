@@ -1,9 +1,9 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "#{@featured_post.headline} <span>#{get_host_without_www(@featured_post.url)}</span>"
+    xml.title "<a href='#{@featured_post.url}'>#{@featured_post.headline}</a> <a href='#{link_comments_url(@featured_post.id)}'><span>#{get_host_without_www(@featured_post.url)}</span></a>"
     xml.description @featured_post.image.url(:large)
-    xml.link @featured_post.url
+    xml.link 
     xml.comments "Comment"
     
     for post in @posts
