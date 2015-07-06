@@ -1,5 +1,10 @@
 class CommentsController < ApplicationController
   
+  def feed
+    @comments = Comment.find(:all)
+    render :template => 'comments/feed.rss.builder', :layout => false
+  end
+
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
