@@ -22,3 +22,4 @@ gem 'intercom-rails'
 group :doc do
   gem 'sdoc', require: false
 end
+ 
