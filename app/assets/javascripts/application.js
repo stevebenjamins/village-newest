@@ -28,9 +28,9 @@ $(document).ready(function(){
 		$('span.clicks').toggle();
 	});
 	
-	$(".newsfeed ul li").hover(function(){
-		$('.meta', this).toggle();
-	});
+	// $(".newsfeed ul li").hover(function(){
+	// 	$('.meta', this).toggle();
+	// });
 	
 	// Sharrre
 	
