@@ -9,7 +9,7 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.headline
-        xml.comments_url link_comments_url(post.id)
+        xml.content_text link_comments_url(post.id)
         xml.category pluralize(post.comments.count, "Comment")
         xml.pubDate post.created_at.to_s(:rfc822)
         xml.link post.url
