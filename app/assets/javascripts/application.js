@@ -27,6 +27,7 @@ $(document).ready(function(){
 	$("#show-post-stats").click(function(){
 		$('span.clicks').toggle();
 	});
+	
 	// Sharrre
 	
 	$('.twitter').sharrre({
