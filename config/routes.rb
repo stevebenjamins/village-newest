@@ -8,8 +8,10 @@ Village::Application.routes.draw do
   get "email-brief" => "pages#brief", :as => :brief
   get "submit-a-story" => "posts#submit", :as => :submit_a_story
 
+  resources :articles
   resources :posts
   resources :comments
+  get 'link_comments/:id' => 'comments#link_comments', :as => :link_comments
   get 'feed' => 'posts#feed'
 
   # 301's
