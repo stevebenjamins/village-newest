@@ -9,7 +9,8 @@ xml.rss :version => "2.0" do
     for post in @posts
       xml.item do
         xml.title post.headline
-        xml.category "<a href=''><span style='display: inline-block; width: 75px;'>#{pluralize(post.comments.count, "Comment")}</span></a>"
+        xml.comments link_comments_url(post.id)
+        xml.category pluralize(post.comments.count, "Comment")
         xml.pubDate post.created_at.to_s(:rfc822)
         xml.link post.url
       end
