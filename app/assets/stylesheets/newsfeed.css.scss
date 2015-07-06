@@ -10,7 +10,7 @@
 				span.headline { margin-right: 3px; }
 				span.comments { font-size: 12px; color: #95A5A6; display: inline-block; width: 75px;
 					a {  color: #95A5A6; }
-					a:hover { color: #3498DB; }
+/*					a:hover { color: #3498DB; }*/
 				}
 			}
 			a:hover { color: #3498DB; 
@@ -66,9 +66,7 @@
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
 
 	.newsfeed { 
-		
-		ul li h3 span.comments a:hover { color: #95A5A6 !important; }
-		
+				
 		
 		
 		li.featured {
