@@ -2,12 +2,21 @@
 	
 	h3 { border-bottom: 1px solid #DDD; padding-bottom: 10px; }
 	
-	.field { padding: 5px 0; 
+	.field { padding: 10px 0; 
 		label { display: block; }
 		input { width: 100%; }
+		p.supporting { margin: 3px 0 5px 00; color: #7F8C8D; font-size: 14px; 
+			code { font-size: 14px; }
+		}
+	}
+	
+	.left-label { 
+		label { width: 30%; display: inline-block; }
+		input { width: 60%; }
+		p.supporting { margin: 10px 0 0 31%; }
 	}
 
-	.submit { 
+	.submit { margin-top: 20px;
 		input { width: 120px; }
 	}
 

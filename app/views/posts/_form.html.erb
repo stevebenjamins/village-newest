@@ -17,18 +17,24 @@
 		<div class="field">
 			<%= f.label :headline %>
 			<%= f.text_field :headline, :autofocus => true %>
+			<p class="supporting">Wrap text with these tags to add italics: <code>&lt;em&gt;italic text&lt;/em&gt;</code>.
+				</p>
 		</div>
 		<div class="field">
 			<%= f.label :url %>
 			<%= f.text_field :url %>
 		</div>
-		<div class="field">
-			<%= f.label :image %>
-		  	<%= f.file_field :image %>
-		</div>
-		<div class="field">
-			<%= f.label :featured %>
+		
+		<h4>Featured Posts</h4>
+		
+		<div class="field left-label">
+			<%= f.label :featured, "Feature?" %>
 		  	<%= f.check_box :featured %>
+		</div>
+		<div class="field left-label">
+			<%= f.label :image, "Featured Image" %>
+		  	<%= f.file_field :image %>
+			<p class="supporting">Featured images should be 1100 x 500.</p>
 		</div>
 
 		<div class="submit">
