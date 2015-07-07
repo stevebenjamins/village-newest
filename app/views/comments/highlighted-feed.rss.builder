@@ -5,9 +5,8 @@ xml.rss :version => "2.0" do
     
     for comment in @comments
       xml.item do
-	    xml.title comment.post.headline
-	    xml.content comment.comment
-        xml.url link_comments_url(comment.post.id)
+	    xml.title comment.comment
+	    xml.category link_comments_url(comment.post.id)
       end
     end
   end
