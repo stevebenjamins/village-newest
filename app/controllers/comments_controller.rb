@@ -6,7 +6,7 @@ class CommentsController < ApplicationController
   end
   
   def highlighted_feed
-    from  = (Time.zone.now - 1.day)
+    from  = (Time.zone.now - 1.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @comments = Comment.where("highlight = ? and created_at >= ?", true, from)
     render :template => 'comments/highlighted-feed.rss.builder', :layout => false
   end

@@ -1,7 +1,11 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "Village Highlighted Comments"
+    if @comments.count != 0
+    xml.title "<div class='heading'><h4>Recent Comments</h4><hr></div>"
+    else 
+    xml.title ""
+    end
     
     for comment in @comments
       xml.item do
