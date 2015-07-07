@@ -12,8 +12,10 @@ Village::Application.routes.draw do
   resources :posts
   resources :comments
   get 'link_comments/:id' => 'comments#link_comments', :as => :link_comments
+  get 'comments/highlight/:id' => 'comments#highlight', :as => :highlight_comment
   get 'feed' => 'posts#feed'
   get 'comments-feed' => 'comments#feed'
+  get 'highlighted-comments-feed' => 'comments#highlighted_feed'
 
   # 301's
   get "archive" => redirect {"/"}

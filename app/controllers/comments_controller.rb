@@ -4,10 +4,26 @@ class CommentsController < ApplicationController
     @comments = Comment.find(:all)
     render :template => 'comments/feed.rss.builder', :layout => false
   end
-
+  
+  def highlighted_feed
+    from  = (Time.zone.now - 1.day)
+    @comments = Comment.where("highlight = ? and created_at >= ?", true, from)
+    render :template => 'comments/highlighted-feed.rss.builder', :layout => false
+  end
+  
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
+    respond_to do |format|
+      format.js
+    end    
+  end
+  
+  def highlight
+    @comment = Comment.find(params[:id])
+    @comment.highlight = true
+    @comment.save 
+    
     respond_to do |format|
       format.js
     end    
