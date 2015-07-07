@@ -12,4 +12,8 @@ $(document).ready(function(){
 		ga('send', 'event', 'Social Share', 'Click', 'Twitter');
 	});
 	
+	$("span.comments a").click(function() { 
+		ga('send', 'event', 'Comments Pane', 'Click', 'Comments');
+	});
+	
 });
