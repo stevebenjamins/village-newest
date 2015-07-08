@@ -1,7 +1,7 @@
 xml.instruct! :xml, :version => "1.0" 
 xml.rss :version => "2.0" do
   xml.channel do
-    xml.title "<a href='#{@featured_post.url}' class='featured'>#{@featured_post.headline}</a> <a href='#{link_comments_url(@featured_post.id)}'><span>#{pluralize(@featured_post.comments.count, "Comment")}</span></a>"
+    xml.title "<h2><a href='#{@featured_post.url}' class='featured'>#{@featured_post.headline}</a> <a href='#{link_comments_url(@featured_post.id)}'><span>#{pluralize(@featured_post.comments.count, "Comment")}</span></a></h2>"
     xml.description @featured_post.image.url(:large) 
     xml.link 
     xml.comments "Comment"
