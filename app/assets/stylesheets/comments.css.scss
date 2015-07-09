@@ -2,7 +2,7 @@
     display: none; 
 }
 
-.comments-pane { position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll; background: #fff; border-left: 1px solid #DDD; padding: 30px; text-align: left; width: 400px; z-index: 300; -webkit-box-shadow: 0px 0px 3px #DDD;
+.comments-pane { position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll; background: #fff; border-left: 1px solid #DDD; padding: 30px; text-align: left; width: 450px; z-index: 300; -webkit-box-shadow: 0px 0px 3px #DDD;
 	.close-comments-pane { cursor: pointer; text-indent: -9999em; background-image: asset-data-url("icon-close@2x.png"); background-size: 16px 16px; background-repeat: no-repeat; width: 16px; height: 16px; display: inline-block; }
 
 	.facebook-login { margin: 30px 0 0 0; border: 1px solid #DDD; padding: 5%; text-align: center; font-weight: bold;text-decoration: none; display: block; -webkit-transition: background 0.2s; -moz-transition: background 0.2s; transition: background 0.2s;
@@ -22,22 +22,25 @@
 	}
 	
 	#list-comments { list-style: none; margin: 30px 0 0 0; padding: 0;
-		li { clear: both; padding-left: 60px; position: relative; margin: 30px 0 0 0;
+		li { clear: both; padding-left: 53px; position: relative; margin: 30px 0 0 0;
 			img { width: 40px; height: 40px; border-radius: 2px; position: absolute; top: 0; left: 0; }
-			h4 { font-size: 15px; margin: 0 0 5px 0;  color: #333; font-weight: 600; 
+			h4 { font-size: 15px; margin: 0 0 5px 0;  color: #333; font-weight: 500; 
 				span { font-size: 12px; color: #95A5A6; margin-left: 5px; font-weight: normal; }
 				a { color: #95A5A6; text-decoration: none; }
 				span.highlight a { color: #F39C12; }
 			}
-			.content-body p { margin: 0 0 10px 0; color: #5f696a; }
+			.content-body p { margin: 0 0 10px 0; font-size: 15px; color: #5f696a; }
 		}
 		li:last-child {  border-bottom: 1px solid #DDD; padding-bottom: 30px; }
 	}
 
 	.comment-form { margin-top: 30px;
 		textarea { width: 95%; padding: 2.5%; border: 1px solid #ddd; resize: none; outline: none; }
-		.submit input { width: 150px; background: #ECF0F1; padding: 10px 0; font-size: 13px; border: none; color: #7F8C8D; text-align: center; }
-	}
+		ul.formatting { display: none; list-style: none; margin: 0 0 5px 0; padding: 2.5%; background: #f7f7f7; font-size: 15px; color: #5f696a; }
+		.submit { 
+			#formatting-help { float: right; margin-top: 10px; text-decoration: none; font-size: 13px; color: #95A5A6; }
+			input { width: 150px; background: #ECF0F1; padding: 10px 0; font-size: 13px; border: none; color: #7F8C8D; text-align: center; }}	
+		}
 	
 }
 

@@ -4,15 +4,16 @@
 	<h4>
 		<%= comment.user.name %>
 		<span><%= time_ago_in_words(comment.created_at) %> ago</span>
-		<% if current_user && current_user.admin? %>
-			<span class="<%= "highlight" if comment.highlight %>"><%= link_to "Highlight", highlight_comment_url(comment.id), remote: true %></span>
-		<% end %>
 		<% if can? :destroy, comment %>
 			<span><%= link_to "Delete", comment_url(comment), confirm: 'Are you sure?', method: :delete, remote: true %></span>
 		<% end %>
 	
 	</h4>
 
-	<div class="content-body"><%= simple_format(comment.comment) %></div>
+	<div class="content-body">
+		<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new( link_attributes: {rel: "nofollow", target: "_blank" }), autolink: true)  %>
+		<%= markdown.render(comment.comment).html_safe %> 
+		
+	</div>
 	
 </li>

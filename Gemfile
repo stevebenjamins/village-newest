@@ -18,6 +18,7 @@ gem 'devise'
 gem 'omniauth-facebook'
 gem "cancan"
 gem 'intercom-rails'
+gem 'redcarpet'
 
 group :doc do
   gem 'sdoc', require: false

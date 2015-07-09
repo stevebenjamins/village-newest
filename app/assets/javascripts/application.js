@@ -23,6 +23,10 @@ $(document).ready(function(){
 	$('.menu-toggle').click(function(){
 		$('.mobile-toggle').slideToggle("fast");
 	});	
+
+	$('#formatting-help').click(function(){
+		$('.formatting').slideToggle("fast");
+	});	
 	
 	$("#show-post-stats").click(function(){
 		$('span.clicks').toggle();

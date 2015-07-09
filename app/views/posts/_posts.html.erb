@@ -5,14 +5,14 @@
 		<% posts.each_with_index do |post, index| %>
 			<% if post.featured %>
 			<li class="featured">
-				<%= link_to out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
+				<%= link_to out_url(post.id), :rel => 'nofollow', :target => '_blank', :headline => post.headline, :domain => get_host_without_www(post.url) do %>
 				<%= image_tag post.image.url(:large) if post.image %>
 				<% end %>
 				
 				
 				<h3>
 					<span class="headline">
-						<%= link_to raw(post.headline), out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %> 
+						<%= link_to raw(post.headline), out_url(post.id), :target => '_blank', :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %> 
 					</span>
 					<span class="comments"><%= link_to "#{post.comments.count} Comments", comment_url(post.id), :remote => true %></span>
 				</h3>
@@ -35,7 +35,7 @@
 			<li>
 				<h3>
 					<span class="headline">
-						<%= link_to raw(post.headline), out_url(post.id), :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %>  
+						<%= link_to raw(post.headline), out_url(post.id), :target => '_blank', :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %>  
 					</span>
 					<span class="comments"><%= link_to "#{post.comments.count} Comments", comment_url(post.id), :remote => true %></span>
 					</h3>

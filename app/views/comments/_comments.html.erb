@@ -2,7 +2,7 @@
 	<div class="close-comments-pane">X</div>
 	<div class="heading">
 		<h3>Comments</h3>
-		<p><a href="#"><%= raw(@post.headline) %></a></p>
+		<p><%= link_to raw(@post.headline), @post.url, :rel => "nofollow", :target => '_blank' %></p>
 	</div>
 	
 	<% if current_user %>

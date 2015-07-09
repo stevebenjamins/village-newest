@@ -18,8 +18,15 @@
 		<div class="field">
 			<%= f.text_area :comment %>
 		</div>
+		
+		<ul class="formatting">
+			<li>*italics*</li>
+			<li>**bold**</li>
+			<li>[Link Name](Link URL)</li>
+		</ul>
 
 		<div class="submit">
+			<a href="javascript:;" id="formatting-help">Formatting</a>
 			<%= f.submit "Add Your Comment" %>
 		</div>
 
