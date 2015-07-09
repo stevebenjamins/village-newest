@@ -18,14 +18,12 @@
 
 $(document).ready(function(){
 	
-	// Mobile Menu
+	$(document.body).on("click", "#formatting-help", function(){
+		$('.formatting').slideToggle("fast");		
+	});	
 	
 	$('.menu-toggle').click(function(){
 		$('.mobile-toggle').slideToggle("fast");
-	});	
-
-	$('#formatting-help').click(function(){
-		$('.formatting').slideToggle("fast");
 	});	
 	
 	$("#show-post-stats").click(function(){
