@@ -93,7 +93,27 @@ class CommentsController < ApplicationController
       end
     end
   end
-
+  
+  def edit
+    @comment = Comment.find(params[:id])
+    @post = @comment.post
+    
+    respond_to do |format|
+      format.js
+    end
+  end
+  
+  def update
+    @comment = Comment.find(params[:id])
+    authorize! :update, @comment
+  
+    respond_to do |format|
+      if @comment.update_attributes(post_params)
+        format.js
+      end
+    end
+  end
+  
   def vote
     @comment = Comment.find(params[:id])
     @comment.liked_by current_user
@@ -113,7 +133,7 @@ class CommentsController < ApplicationController
   private
 
   def post_params
-    params.require(:comment).permit(:comment, :post_id)
+    params.require(:comment).permit(:comment, :post_id, :user_id, :updated_at)
   end  
 
 end

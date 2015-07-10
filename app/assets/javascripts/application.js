@@ -31,7 +31,7 @@ $(document).ready(function(){
 	});
 	
 	$(document.body).on("click", ".voter-no-user", function(){
-		alert("Oops— sorry you have to login to Facebook to do that.");
+		alert("Sorry, you have to login to Facebook to do that.");
 	})
 	
 	// $(".newsfeed ul li").hover(function(){
