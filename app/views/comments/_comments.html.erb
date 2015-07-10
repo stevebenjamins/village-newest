@@ -12,9 +12,9 @@
 	<% end %>
 	
 	<ul id="list-comments">
-	<% if @post.comments.count != 0 %>
-		<% @post.comments.each do |comment| %>
-			<%= render 'comments/comment', :comment => comment %>
+	<% if @comments.count != 0 %>
+		<% @comments.each do |comment| %>
+			<%= render 'comments/comment', :comment => comment if !comment.parent_id %>
 		<% end %>
 	<% else %>
 		<p><em>No comments yet— you should add one!</em></p>

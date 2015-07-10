@@ -35,8 +35,11 @@
 				}
 				 p { margin: 0 0 10px 0; font-size: 15px; color: #5f696a; }
 			}
+
 		}
-		li:last-child {  border-bottom: 1px solid #DDD; padding-bottom: 30px; }
+		ul { list-style: none; border-bottom: none; padding: 0 0 0 50px; margin: 0; background-image: asset-data-url("comments-bg.png"); background-position: -5px 0; background-repeat: repeat-y;
+			li { background: #FFF;  }
+		}
 	}
 
 	.comment-form { margin-top: 30px;

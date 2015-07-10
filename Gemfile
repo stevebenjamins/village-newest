@@ -21,6 +21,7 @@ gem 'intercom-rails'
 gem 'redcarpet'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'ga_events'
+gem 'acts_as_tree'
 
 group :doc do
   gem 'sdoc', require: false

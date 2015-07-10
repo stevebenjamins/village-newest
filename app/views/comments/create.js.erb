@@ -1,2 +1,11 @@
+<% if @comment.parent_id %>
+
+$("#comment-<%= @comment.parent_id %>").append("<ul><%= escape_javascript(render('comment', :comment => @comment))  %></ul>");
+$('#list-comments form').remove();
+
+<% else %>
+
 $("ul#list-comments").prepend("<%= escape_javascript(render('comment', :comment => @comment))  %>");
 $(".comment-form textarea").val('');
+
+<% end %>

@@ -1,0 +1,2 @@
+$('#comment-<%= @parent_comment.id %>').append("<%= escape_javascript( render 'comments/form', :comment => @comment ) %>");
+$('#comment-<%= @parent_comment.id %> .reply').attr('href', 'javascript:;');

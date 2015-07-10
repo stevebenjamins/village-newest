@@ -7,6 +7,7 @@ class CommentsController < ApplicationController
   
   def show
     @post = Post.find(params[:id])
+    @comments = @post.comments
     @comment = Comment.new
     respond_to do |format|
       format.js
@@ -60,6 +61,7 @@ class CommentsController < ApplicationController
    @day_7 = Post.where(["created_at >= ? and created_at <= ?", from, to])
 
     @post = Post.find(params[:id])
+    @comments = @post.comments
     @comment = Comment.new
     respond_to do |format|
       format.html
@@ -81,6 +83,16 @@ class CommentsController < ApplicationController
     end    
   end
 
+   def parent_reply
+     @comment = Comment.new
+     @parent_comment = Comment.find(params[:id])
+     @parent_id = @parent_comment.id
+     @post = @parent_comment.post
+
+     respond_to do |format|
+       format.js
+     end
+   end
  
   def destroy
     @comment = Comment.find(params[:id])
@@ -133,7 +145,7 @@ class CommentsController < ApplicationController
   private
 
   def post_params
-    params.require(:comment).permit(:comment, :post_id, :user_id, :updated_at)
+    params.require(:comment).permit(:comment, :post_id, :user_id, :updated_at, :parent_id)
   end  
 
 end

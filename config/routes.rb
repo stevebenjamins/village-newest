@@ -12,7 +12,7 @@ Village::Application.routes.draw do
   resources :posts
   resources :comments do
     member do
-      put "parent_reply", to: "comments#parent_reply"
+      get "parent-reply", to: "comments#parent_reply", :as => :parent_reply
       put "vote", to: "comments#vote"
       put "removevote", to: "comments#removevote"
     end
