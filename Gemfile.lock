@@ -55,6 +55,8 @@ GEM
     execjs (2.5.2)
     faraday (0.9.1)
       multipart-post (>= 1.2, < 3)
+    ga_events (1.0.1)
+      rails (>= 3.1)
     groupdate (2.4.0)
       activesupport (>= 3)
     hashie (3.4.2)
@@ -490,6 +492,7 @@ DEPENDENCIES
   cancan
   coffee-rails (~> 4.0.0)
   devise
+  ga_events
   groupdate
   intercom-rails
   jbuilder (~> 1.2)

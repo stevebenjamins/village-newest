@@ -20,6 +20,7 @@ gem "cancan"
 gem 'intercom-rails'
 gem 'redcarpet'
 gem 'acts_as_votable', '~> 0.10.0'
+gem 'ga_events'
 
 group :doc do
   gem 'sdoc', require: false
