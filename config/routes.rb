@@ -10,7 +10,14 @@ Village::Application.routes.draw do
 
   resources :articles
   resources :posts
-  resources :comments
+  resources :comments do
+    member do
+      put "parent_reply", to: "comments#parent_reply"
+      put "vote", to: "comments#vote"
+      put "removevote", to: "comments#removevote"
+    end
+  end
+
   get 'link_comments/:id' => 'comments#link_comments', :as => :link_comments
   get 'comments/highlight/:id' => 'comments#highlight', :as => :highlight_comment
   get 'feed' => 'posts#feed'

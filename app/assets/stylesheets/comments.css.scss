@@ -2,13 +2,12 @@
     display: none; 
 }
 
-.comments-pane { position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll; background: #fff; border-left: 1px solid #DDD; padding: 24px 30px 30px 30px; text-align: left; width: 450px; z-index: 300; -webkit-box-shadow: 0px 0px 3px #DDD;
+.comments-pane { position: fixed; right: 0; top: 0; height: 100%; overflow-y: scroll; background: #fff; border-left: 1px solid #DDD; padding: 24px 30px 30px 30px; text-align: left; width: 450px; z-index: 300; -webkit-box-shadow: 0px 0px 3px #DDD; box-shadow: 0px 0px 3px #DDD; -moz-box-shadow: 0px 0px 3px #DDD;
 	.close-comments-pane { position: relative; top: -16px; left: -16px; cursor: pointer; text-indent: -9999em; background-image: asset-data-url("icon-close@2x.png"); background-position: 50% 50%; background-size: 16px 16px; background-repeat: no-repeat; width: 16px; height: 16px; display: block; padding: 16px; }
 
-	.facebook-login { margin: 30px 0 0 0; border: 1px solid #DDD; padding: 5%; text-align: center; font-weight: bold;text-decoration: none; display: block; -webkit-transition: background 0.2s; -moz-transition: background 0.2s; transition: background 0.2s;
+	.facebook-login { margin: 30px 0 0 0; border: 1px solid #DDD; padding: 5%; text-align: center; font-weight: bold;text-decoration: none; display: block; -webkit-box-shadow: inset 0 -3px 0 0 #ECF0F1; -moz-box-shadow: inset 0 -3px 0 0 #ECF0F1; -inset-box-shadow: inset 0 -3px 0 0 #ECF0F1;
 		span { margin-top: 5px; display: block; font-size: 14px; color: #7F8C8D; font-weight: normal }
 	}
-	.facebook-login:hover { background: #f7f7f7; }
 
 	h3 { font-weight: normal; color: #333; font-size: 21px; margin-top: 0; }
 	p { color: #5f696a; }
@@ -22,14 +21,20 @@
 	}
 	
 	#list-comments { list-style: none; margin: 30px 0 0 0; padding: 0;
-		li { clear: both; padding-left: 53px; position: relative; margin: 30px 0 0 0;
+		li { clear: both; position: relative; margin: 30px 0 0 0;
 			img { width: 40px; height: 40px; border-radius: 2px; position: absolute; top: 0; left: 0; }
-			h4 { font-size: 15px; margin: 0 0 5px 0;  color: #333; font-weight: 500; 
+			h4 { font-size: 15px; margin: 0 0 5px 0;  color: #333; font-weight: 600; 
 				span { font-size: 12px; color: #95A5A6; margin-left: 5px; font-weight: normal; }
 				a { color: #95A5A6; text-decoration: none; }
 				span.highlight a { color: #F39C12; }
 			}
-			.content-body p { margin: 0 0 10px 0; font-size: 15px; color: #5f696a; }
+			.comment-body {
+				ul { list-style: square;  } 
+				ul,ol { margin: 10px 0 10px 15px; padding: 0; 
+					li { margin: 0; padding: 0; border: none; font-size: 15px; color: #5f696a; }
+				}
+				 p { margin: 0 0 10px 0; font-size: 15px; color: #5f696a; }
+			}
 		}
 		li:last-child {  border-bottom: 1px solid #DDD; padding-bottom: 30px; }
 	}
@@ -40,6 +45,12 @@
 		.submit { position: relative; margin-top: 5px;
 			#formatting-help { position: absolute; right: 0; top: 10px; margin-top: 5px; text-decoration: none; font-size: 13px; color: #95A5A6; }
 			input { width: 150px; background: #ECF0F1; padding: 10px 0; font-size: 13px; border: none; color: #7F8C8D; text-align: center; }}	
+		}
+		
+		.comment-meta { 
+			span { font-size: 12px; color: #95A5A6; margin-right: 15px; 
+				a { color: #95A5A6; text-decoration: none; }
+			}
 		}
 	
 }

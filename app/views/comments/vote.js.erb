@@ -1,0 +1,1 @@
+$('#comment-<%= @comment.id %> .voter:first').html("<%= escape_javascript( render 'comments/voter', :comment => @comment, :current_user => current_user ) %>");

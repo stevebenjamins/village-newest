@@ -8,7 +8,7 @@
 	<% if current_user %>
 		<%= render 'comments/form' %>
 	<% else %>
-		<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to add a comment. <span>For authentication only— we'll never post to your feed.</span><% end %>
+		<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to add a comment. <span>We'll never post to your feed.</span><% end %>
 	<% end %>
 	
 	<ul id="list-comments">

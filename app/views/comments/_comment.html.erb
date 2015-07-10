@@ -1,19 +1,23 @@
 <li id="comment-<%= comment.id %>">
 
-	<%= image_tag "#{comment.user.profile_picture}?width=80" %>
+	<!--<%= image_tag "#{comment.user.profile_picture}?width=80" %>-->
 	<h4>
 		<%= comment.user.name %>
 		<span><%= time_ago_in_words(comment.created_at) %> ago</span>
+	</h4>
+
+	<div class="comment-body">
+		<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new( link_attributes: {rel: "nofollow", target: "_blank" }), autolink: true)  %>
+		<%= markdown.render(comment.comment).html_safe %> 
+	</div>
+
+	<div class="comment-meta">
+		
+		<%= render 'voter', :comment => comment %>
+		
 		<% if can? :destroy, comment %>
 			<span><%= link_to "Delete", comment_url(comment), confirm: 'Are you sure?', method: :delete, remote: true %></span>
 		<% end %>
-	
-	</h4>
-
-	<div class="content-body">
-		<% markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML.new( link_attributes: {rel: "nofollow", target: "_blank" }), autolink: true)  %>
-		<%= markdown.render(comment.comment).html_safe %> 
-		
 	</div>
 	
 </li>

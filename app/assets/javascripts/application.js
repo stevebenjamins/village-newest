@@ -30,6 +30,10 @@ $(document).ready(function(){
 		$('span.clicks').toggle();
 	});
 	
+	$(document.body).on("click", ".voter-no-user", function(){
+		alert("Oops— sorry you have to login to Facebook to do that.");
+	})
+	
 	// $(".newsfeed ul li").hover(function(){
 	// 	$('.meta', this).toggle();
 	// });

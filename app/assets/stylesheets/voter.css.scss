@@ -1,0 +1,6 @@
+.voter { display: inline-block;
+	
+	a { display: inline-block; padding: 5px 0 5px 20px; width: 10px; background-image: asset-data-url("icon-upvote.png"); background-size: 11px 9px; background-repeat: no-repeat; background-position: 0px 7px;  }
+	a.have-voted { color: #3498DB !important; background-image: asset-data-url("icon-upvote-active.png"); }
+	
+}

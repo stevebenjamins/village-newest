@@ -16,4 +16,8 @@ $(document).ready(function(){
 		ga('send', 'event', 'Comments Pane', 'Click', 'Comments');
 	});
 	
+	$(document.body).on("click", ".voter-no-user", function(){
+		ga('send', 'event', 'Tried to upvote, not logged in', 'Click', 'Upvote');
+	});
+	
 });

@@ -71,11 +71,13 @@ class CommentsController < ApplicationController
     @comment = Comment.new(post_params)
     @comment.user_id = current_user.id
     authorize! :create, @comment
+    @comment.save
+    
+    @comment.liked_by current_user
+    @comment.votes_for.size 
 
     respond_to do |format|
-      if @comment.save
-        format.js
-      end
+      format.js
     end    
   end
 
@@ -89,6 +91,22 @@ class CommentsController < ApplicationController
       if @comment.destroy
         format.js
       end
+    end
+  end
+
+  def vote
+    @comment = Comment.find(params[:id])
+    @comment.liked_by current_user
+    respond_to do |format|
+      format.js { render :action => "vote" }
+    end
+  end    
+
+  def removevote
+    @comment = Comment.find(params[:id])
+    @comment.unliked_by current_user
+    respond_to do |format|
+      format.js { render :action => "vote" }
     end
   end
   
