@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
   
   def feed
-    @comments = Comment.find(:all)
+    @comments = Comment.find_all_by_commentable_type("Post")
     render :template => 'comments/feed.rss.builder', :layout => false
   end
   

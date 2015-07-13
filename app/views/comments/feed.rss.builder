@@ -6,7 +6,7 @@ xml.rss :version => "2.0" do
     for comment in @comments
       xml.item do
         xml.content "#{comment.comment} — Written by #{comment.user.name}"
-        xml.url link_comments_url(comment.post.id)
+        xml.url link_comments_url(comment.commentable_id)
       end
     end
   end
