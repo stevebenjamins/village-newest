@@ -18,6 +18,8 @@
 
 $(document).ready(function(){
 	
+	$( "#facebook-login" ).delay( 3800 ).effect( "shake", { times:2 }, 1000);
+	
 	$(document.body).on("click", "#formatting-help", function(){
 		$('.formatting').slideToggle("fast");		
 	});	
