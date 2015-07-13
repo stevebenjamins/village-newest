@@ -22,6 +22,7 @@ gem 'redcarpet'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'ga_events'
 gem 'acts_as_tree'
+gem "cocoon", '~> 1.2.0'
 
 group :doc do
   gem 'sdoc', require: false

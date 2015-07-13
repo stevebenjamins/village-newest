@@ -1,0 +1,1 @@
+$('.poll-item-<%= @poll_item.id %> .voter:first').html("<%= escape_javascript( render 'polls/voter', :poll_item => @poll_item ) %>");

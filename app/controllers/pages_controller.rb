@@ -8,6 +8,8 @@ class PagesController < ApplicationController
       @september_movies = OutdoorMovie.where("month = ?", 'September').order('date ASC')
     @movies = OutdoorMovie.order('date ASC')
     @title = "Outdoor movies playing in Toronto 2015"
+    @facebook_image = ActionController::Base.helpers.asset_path('facebook-image-movies.jpg')
+    @facebook_description = "Every outdoor movie playing in Toronto this summer. From 8 different festivals."
   end
   
   def brief

@@ -2,7 +2,10 @@
 	<div class="close-comments-pane">X</div>
 	<div class="heading">
 		<h3>Comments</h3>
-		<p><%= link_to raw(@post.headline), @post.url, :rel => "nofollow", :target => '_blank' %></p>
+		<p>
+			<%= link_to raw(@parent_item.headline), @parent_item.url, :rel => "nofollow", :target => '_blank' if params[:type] == 'posts' %>
+			<%= @parent_item.name if params[:type] == 'polls' %>
+		</p>
 	</div>
 	
 	<% if current_user %>

@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require cocoon
 //= require_tree .
 
 
@@ -33,7 +34,7 @@ $(document).ready(function(){
 	});
 	
 	$(document.body).on("click", ".voter-no-user", function(){
-		alert("Sorry, you have to login to Facebook to do that.");
+		alert("Sorry, you have to login to do that.");
 	})
 	
 	// $(".newsfeed ul li").hover(function(){
@@ -42,7 +43,7 @@ $(document).ready(function(){
 	
 	// Sharrre
 	
-	$('.twitter').sharrre({
+	$('#twitter').sharrre({
 	  share: {
 	    twitter: true
 	  },
@@ -55,7 +56,7 @@ $(document).ready(function(){
 	    api.openPopup('twitter');
 	  }
 	});
-	$('.facebook').sharrre({
+	$('#facebook').sharrre({
 	  share: {
 	    facebook: true
 	  },

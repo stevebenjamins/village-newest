@@ -1,0 +1,41 @@
+.polls {
+	
+	.list-polls { list-style: none; margin: 30px 0 0 0; padding: 0; 
+		li { border: 1px solid #DDD; position: relative; text-align: center; padding: 15px 0;
+			h3 a { font-size: 24px; text-decoration: none; color: #333333; display: block; }
+			h3 a:hover { text-decoration: underline; }
+			
+		}
+	}
+	
+	.show-poll { 
+		h1 { color: #333333; font-size: 35px; }
+		p.description { text-align: center; margin-bottom: 30px; }
+		hr { height: 1px; border: none; background: #DDD; }
+	}
+
+	p.description { font-size: 15px; color: #7f8c8d;
+		span.time { padding-left: 30px; background-image: asset-data-url("icon-time@2x.png"); background-size: 18px 18px; background-repeat: no-repeat; background-position: 0 0%; }
+		span.comments a { margin-left: 30px; text-decoration: none; color: #7f8c8d; padding-left: 30px; background-image: asset-data-url("icon-comments@2x.png"); background-size: 18px 18px; background-repeat: no-repeat; background-position: 0 0%;  }
+	}
+	.meta { position: absolute; top: 0px; left: -50px; padding: 0 20px 10px 0;
+		a { display: block; text-align: right; color: #95A5A6; font-size: 13px; text-decoration: none; }
+	}
+
+	.poll-items { list-style: none; margin: 40px 0 0 00; padding: 0; 
+		li { padding: 20px 0 0 170px; position: relative; min-height: 80px; margin-bottom: 20px;
+			img { position: absolute; top: 0; left: 0; }
+			h4 { font-size: 19px; color: #333333; margin: 0; font-weight: 600; }
+			p { font-size: 15px; color: #7f8c8d; margin: 0; }
+			.voter a { background-color: #f7f7f7; position: absolute; top: 20px; right: 0; width: 50px; height: 30px; background-position: center 10px; padding: 25px 0 0 0; text-decoration: none; text-align: center; font-weight: bold }
+		}
+		.facebook-login { margin-bottom: 30px; }
+	}
+	
+	.closing { text-align: center; color: #333; margin: 40px 0 50px 0;  
+		h3 { font-weight: 600; font-size: 19px; }
+	}
+	
+	
+}
+

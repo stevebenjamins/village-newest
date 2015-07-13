@@ -13,7 +13,10 @@ class PostsController < ApplicationController
   end  
     
   def index
-    
+
+    @facebook_image = ActionController::Base.helpers.asset_path('facebook-image.jpg')
+    @facebook_description = "The best of Toronto news. Hand-picked daily."
+        
     # Day 1
     from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
     @day_1 = Post.where(["created_at >= ?", from])

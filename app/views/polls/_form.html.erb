@@ -1,0 +1,53 @@
+<div class='form'>
+
+	<%= form_for([@poll]) do |f| %>
+
+		<% if @poll.errors.any? %>
+		  <div id="error_explanation">
+		    <h2><%= pluralize(@poll.errors.count, "error") %> prohibited this stefe from being saved:</h2>
+
+		    <ul>
+		    <% @poll.errors.full_messages.each do |msg| %>
+		      <li><%= msg %></li>
+		    <% end %>
+		    </ul>
+		  </div>
+		<% end %>
+	
+		<div class="field">
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+    	<div class="field">
+			<%= f.label :voting_closes, "When does voting close?" %>
+			<%= f.text_field :voting_closes %>
+			<p class="supporting">Format: 2014-12-04 00:00:00.000000</p>
+		</div>
+		
+		<div class="field">
+			<%= f.label :facebook_image %>
+			<%= f.file_field :facebook_image %>
+			<p class="supporting">1200x628</p>
+		  </div>
+		
+		<h4>Poll Items:</h4>
+		<div class="field">
+			<div id="poll-items">
+		    <%= f.fields_for :poll_items do |poll_item| %>
+		      <%= render 'poll_item_fields', :f => poll_item %>
+		    <% end %>
+		    <div class="links">
+		      <%= link_to_add_association 'Add Item', f, :poll_items %>
+		    </div>
+		  </div>
+		</div>
+		Poll images should be 150x100.
+		
+		<div class="submit">
+			<%= f.submit %>
+		</div>
+
+	<% end %>
+
+</div>
+

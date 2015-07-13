@@ -10,6 +10,7 @@ class Ability
 
     if user.admin?
       can :manage, Post
+      can :manage, Poll
       can :manage, Comment
     elsif user.writer?
       can :manage, Post

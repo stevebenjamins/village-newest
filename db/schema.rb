@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150710184501) do
+ActiveRecord::Schema.define(version: 20150713182546) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -28,6 +28,8 @@ ActiveRecord::Schema.define(version: 20150710184501) do
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
     t.integer  "parent_id"
+    t.integer  "commentable_id"
+    t.string   "commentable_type"
   end
 
   add_index "comments", ["cached_votes_down"], name: "index_comments_on_cached_votes_down"
@@ -48,6 +50,60 @@ ActiveRecord::Schema.define(version: 20150710184501) do
     t.datetime "updated_at"
     t.string   "month"
   end
+
+  create_table "poll_items", force: true do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "poll_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.integer  "cached_votes_total",      default: 0
+    t.integer  "cached_votes_score",      default: 0
+    t.integer  "cached_votes_up",         default: 0
+    t.integer  "cached_votes_down",       default: 0
+    t.integer  "cached_weighted_score",   default: 0
+    t.integer  "cached_weighted_total",   default: 0
+    t.float    "cached_weighted_average", default: 0.0
+  end
+
+  add_index "poll_items", ["cached_votes_down"], name: "index_poll_items_on_cached_votes_down"
+  add_index "poll_items", ["cached_votes_score"], name: "index_poll_items_on_cached_votes_score"
+  add_index "poll_items", ["cached_votes_total"], name: "index_poll_items_on_cached_votes_total"
+  add_index "poll_items", ["cached_votes_up"], name: "index_poll_items_on_cached_votes_up"
+  add_index "poll_items", ["cached_weighted_average"], name: "index_poll_items_on_cached_weighted_average"
+  add_index "poll_items", ["cached_weighted_score"], name: "index_poll_items_on_cached_weighted_score"
+  add_index "poll_items", ["cached_weighted_total"], name: "index_poll_items_on_cached_weighted_total"
+
+  create_table "polls", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "voting_closes"
+    t.integer  "cached_votes_total",          default: 0
+    t.integer  "cached_votes_score",          default: 0
+    t.integer  "cached_votes_up",             default: 0
+    t.integer  "cached_votes_down",           default: 0
+    t.integer  "cached_weighted_score",       default: 0
+    t.integer  "cached_weighted_total",       default: 0
+    t.float    "cached_weighted_average",     default: 0.0
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
+  end
+
+  add_index "polls", ["cached_votes_down"], name: "index_polls_on_cached_votes_down"
+  add_index "polls", ["cached_votes_score"], name: "index_polls_on_cached_votes_score"
+  add_index "polls", ["cached_votes_total"], name: "index_polls_on_cached_votes_total"
+  add_index "polls", ["cached_votes_up"], name: "index_polls_on_cached_votes_up"
+  add_index "polls", ["cached_weighted_average"], name: "index_polls_on_cached_weighted_average"
+  add_index "polls", ["cached_weighted_score"], name: "index_polls_on_cached_weighted_score"
+  add_index "polls", ["cached_weighted_total"], name: "index_polls_on_cached_weighted_total"
 
   create_table "posts", force: true do |t|
     t.text     "headline"

@@ -14,7 +14,8 @@
 		  </div>
 		<% end %>
 	
-		<%= f.hidden_field :post_id, :value => @post.id %>
+		<%= f.hidden_field :commentable_id, :value => @parent_item.id %>
+		<%= f.hidden_field :commentable_type, :value => params[:type].singularize.capitalize %>
 		<%= f.hidden_field :parent_id, :value => @parent_id if @parent_id %>
 		<div class="field">
 			<%= f.text_area :comment %>

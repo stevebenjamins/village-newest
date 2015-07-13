@@ -24,8 +24,8 @@
 	<%= javascript_include_tag "application", "data-turbolinks-track" => true %>
 	<%= csrf_meta_tags %>
 	
-	<meta property="og:image" content="<%= asset_url("facebook-image.jpg") if @body_class != 'movies-body' %><%= asset_url("facebook-image-movies.jpg") if @body_class == 'movies-body' %>" />
-	<meta property="og:title" content="<%= "The best of Toronto news. Hand-picked daily." if @body_class != 'movies-body' %><%= "Every outdoor movie playing in Toronto this summer. From 8 different festivals." if @body_class == 'movies-body' %>" />	
+	<meta property="og:image" content="<%= @facebook_image if @facebook_image %>" />
+	<meta property="og:title" content="<%= @facebook_description if @facebook_description %>" />	
 
 </head>
 <body class="<%= @body_class if @body_class %>" data-no-turbolink>
@@ -35,6 +35,11 @@
 	<ul class="user-nav">
 		<% if can? :create, Post %>
 			<li><%= link_to "New Post", new_post_url()  %></li>
+		<% end %>
+		<% if can? :create, Poll %>
+			<li><%= link_to "New Poll", new_poll_url()  %></li>
+		<% end %>
+		<% if can? :create, Post %>
 			<li><%= link_to "Statistics", "javascript:;", :id => 'show-post-stats'  %></li>
 		<% end %>
 		<% if user_signed_in? %>
@@ -53,7 +58,6 @@
 		<% else %>
 			<li id="mobile-only"><%= link_to "Login with Facebook", user_omniauth_authorize_path(:facebook) %></li>
 		<% end %>
-		<li><%= link_to "Suggest a Story", submit_a_story_url() %></li>
 		<li><a href="mailto:steve@itsonvillage.com" id="contact">Contact</a></li>
 	</ul>	
 	<a href="javascript:;" id="toggle-mobile-navigation">Menu</a>

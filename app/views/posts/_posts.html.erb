@@ -1,5 +1,5 @@
 <% if posts.first %>
-	<h2><span><%= newsfeed_date(posts.first.created_at) %></span></h2>
+	<h2 class="heading"><span><%= newsfeed_date(posts.first.created_at) %></span></h2>
 	<ul>
 		<!-- Featured Post -->
 		<% posts.each_with_index do |post, index| %>
@@ -14,7 +14,7 @@
 					<span class="headline">
 						<%= link_to raw(post.headline), out_url(post.id), :target => '_blank', :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %> 
 					</span>
-					<span class="comments"><%= link_to "#{post.comments.count} Comments", comment_url(post.id), :remote => true %></span>
+					<span class="comments"><%= link_to "#{post.comments.count} Comments", show_comments_url("posts", post.id), :remote => true %></span>
 				</h3>
 				<hr>
 				<span class="clicks"><%= post.clicks %></span>
@@ -37,7 +37,7 @@
 					<span class="headline">
 						<%= link_to raw(post.headline), out_url(post.id), :target => '_blank', :rel => 'nofollow', :headline => post.headline, :domain => get_host_without_www(post.url)  %>  
 					</span>
-					<span class="comments"><%= link_to "#{post.comments.count} Comments", comment_url(post.id), :remote => true %></span>
+					<span class="comments"><%= link_to "#{post.comments.count} Comments", show_comments_url("posts", post.id), :remote => true %></span>
 					</h3>
 				<span class="clicks"><%= post.clicks %></span>
 				<% if can? :update, post %>

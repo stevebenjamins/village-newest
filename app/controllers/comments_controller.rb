@@ -6,8 +6,9 @@ class CommentsController < ApplicationController
   end
   
   def show
-    @post = Post.find(params[:id])
-    @comments = @post.comments
+    @parent_item = Post.find(params[:id])  if params[:type] == "posts"
+    @parent_item = Poll.find(params[:id])  if params[:type] == "polls"
+    @comments = @parent_item.comments  
     @comment = Comment.new
     respond_to do |format|
       format.js
@@ -145,7 +146,7 @@ class CommentsController < ApplicationController
   private
 
   def post_params
-    params.require(:comment).permit(:comment, :post_id, :user_id, :updated_at, :parent_id)
+    params.require(:comment).permit(:comment, :commentable_id, :commentable_type, :user_id, :updated_at, :parent_id)
   end  
 
 end

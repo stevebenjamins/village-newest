@@ -1,0 +1,52 @@
+<div class="wrapper">
+	<div class="polls"> 
+		<div class="show-poll">
+		
+			<h1><%= @poll.name %></h1>
+			<p class="description">
+				<span class="time"><%= poll_time(@poll) %></span>
+				<span class="comments"><%= link_to "#{@poll.comments.count} Comments", show_comments_url("polls", @poll.id), :remote => true %></span>
+			</p>
+			<hr>
+			
+			<ol class="poll-items">
+				<% cycle_variable = 0 %>
+				<% @poll.poll_items.to_enum.with_index(1).each do |poll_item, index| %>
+					<li class="poll-item-<%= poll_item.id %>">
+						<%= image_tag poll_item.image.url(:small) if poll_item.image? %>
+						<h4><%= "#{index}. #{poll_item.name}" %></h4>
+						<p><%= poll_item.description %></p>
+						<%= render 'voter', :poll_item => poll_item %>
+					</li>
+					<% cycle_variable += 1 %>
+					<% if cycle_variable == 5 %>
+						<% if !current_user %>
+							<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to vote. <span>We'll never post to your feed.</span><% end %>
+						<% end %>
+						<% cycle_variable = 0 %>
+					<% end %>
+				<% end %>
+			</ol>
+			
+			<% if can? :update, @poll %>
+				<div class="meta">
+					<%= link_to "Edit", edit_poll_url(@poll)  %>
+					<%= link_to "Delete", poll_url(@poll), confirm: 'Are you sure?', method: :delete %>
+				</div>
+			<% end %>
+			<br><p style="color:#7F8C8D; text-align: center;">Are we missing something? <a href="mailto:steve@itsonvillage.com">Suggest another place to add the poll</a>.</p>
+			<br class="clear">
+			<HR>
+			<div class="closing">
+				<h3>Share <%= @poll.name %>:</h3>
+				<div class="sharrre">
+				  <div class="sharrre-button" id="twitter"></div>
+				  <div class="sharrre-button" id="facebook"></div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	
+	
+</div>

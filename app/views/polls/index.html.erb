@@ -1,0 +1,23 @@
+<div class="wrapper">
+	<div class="polls"> 
+		
+		<h2 class="heading"><span>Polls</span></h2>
+
+		<ul class="list-polls">
+		<% @polls.each do |poll| %>
+			<li>
+				<h3><%= link_to poll.name, show_poll_url(poll.permalink) %></h3>
+				<p class="description"><span class="time"><%= poll_time(poll) %></span></p>
+				<% if can? :update, poll %>
+					<div class="meta">
+						<%= link_to "Edit", edit_poll_url(poll)  %>
+						<%= link_to "Delete", poll_url(poll), confirm: 'Are you sure?', method: :delete %>
+					</div>
+				<% end %>
+			</li>
+		<% end %>
+		</ul>
+	
+	</div>
+	<br class="clear">
+</div>
