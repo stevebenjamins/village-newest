@@ -8,7 +8,7 @@ class PollsController < ApplicationController
     @poll = Poll.find_by_permalink(params[:permalink])
     @facebook_image = @poll.facebook_image.url(:large)
     @facebook_description = @poll.name
-    @title = @poll.name
+    @title = "Poll: " + @poll.name
   end
 
   def new
