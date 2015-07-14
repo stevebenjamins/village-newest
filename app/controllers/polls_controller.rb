@@ -8,7 +8,7 @@ class PollsController < ApplicationController
   def show
     @poll = Poll.find(params[:id])
     @facebook_image = @poll.facebook_image.url(:large)
-    @facebook_description = @poll.name
+    @facebook_description = "Poll: " + @poll.name
     @title = "Poll: " + @poll.name
   end
 
