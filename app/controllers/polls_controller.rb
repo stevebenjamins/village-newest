@@ -62,7 +62,7 @@ class PollsController < ApplicationController
   private
 
   def poll_params
-    params.require(:poll).permit(:name, :permalink, :facebook_image, :voting_closes, poll_items_attributes: [:id, :name, :description, :poll_id, :_destroy, :image])
+    params.require(:poll).permit(:name, :permalink, :facebook_image, :voting_closes, poll_items_attributes: [:id, :url, :name, :description, :poll_id, :_destroy, :image])
   end  
 
 end

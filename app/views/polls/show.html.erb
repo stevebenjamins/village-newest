@@ -17,7 +17,7 @@
 				<% @poll.poll_items.to_enum.with_index(1).each do |poll_item, index| %>
 					<li class="poll-item-<%= poll_item.id %>">
 						<%= image_tag poll_item.image.url(:small) if poll_item.image? %>
-						<h4><%= "#{index}. #{poll_item.name}" %></h4>
+						<h4><%= link_to "#{index}. #{poll_item.name}", poll_item.url, :rel => 'nofollow', :target => '_blank' %></h4>
 						<p><%= poll_item.description %></p>
 						<%= render 'voter', :poll_item => poll_item %>
 					</li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150713182546) do
+ActiveRecord::Schema.define(version: 20150714160241) do
 
   create_table "comments", force: true do |t|
     t.integer  "user_id"
@@ -68,6 +68,7 @@ ActiveRecord::Schema.define(version: 20150713182546) do
     t.integer  "cached_weighted_score",   default: 0
     t.integer  "cached_weighted_total",   default: 0
     t.float    "cached_weighted_average", default: 0.0
+    t.string   "url"
   end
 
   add_index "poll_items", ["cached_votes_down"], name: "index_poll_items_on_cached_votes_down"
