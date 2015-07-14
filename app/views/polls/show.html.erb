@@ -22,7 +22,7 @@
 						<%= render 'voter', :poll_item => poll_item %>
 					</li>
 					<% cycle_variable += 1 %>
-					<% if cycle_variable == 5 %>
+					<% if cycle_variable == 4 %>
 						<% if !current_user %>
 							<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to vote. <span>We'll never post to your feed.</span><% end %>
 						<% end %>
