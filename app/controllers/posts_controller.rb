@@ -16,7 +16,7 @@ class PostsController < ApplicationController
   def index
 
     @facebook_image = "http://www.itsonvillage.com/" + ActionController::Base.helpers.asset_path('facebook-image.jpg')
-    @facebook_description = "The best of Toronto news. Hand-picked daily."
+    @facebook_title = "The best of Toronto news. Hand-picked daily."
         
     # Day 1
     from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
