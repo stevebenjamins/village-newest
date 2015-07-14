@@ -5,7 +5,7 @@
 			<h1><%= @poll.name %></h1>
 			<p class="description">
 				<span class="time"><%= poll_time(@poll) %></span>
-				<span class="comments"><%= link_to "#{@poll.comments.count} Comments", show_comments_url("polls", @poll.id), :remote => true %></span>
+				<span class="comments"><%= link_to "#{@poll.comments.count} Comments", poll_comments_url(@poll), :remote => true %></span>
 			</p>
 			<hr>
 			

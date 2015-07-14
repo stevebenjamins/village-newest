@@ -5,7 +5,7 @@ class PollsController < ApplicationController
   end
   
   def show
-    @poll = Poll.find_by_permalink(params[:permalink])
+    @poll = Poll.find(params[:id])
     @facebook_image = @poll.facebook_image.url(:large)
     @facebook_description = @poll.name
     @title = "Poll: " + @poll.name
@@ -17,8 +17,6 @@ class PollsController < ApplicationController
   
   def create
     @poll = Poll.new(poll_params)
-    permalink = params[:poll][:name]
-    @poll.permalink = permalink.gsub(/\s/, "-").gsub(/([^\W-])/, '\1').downcase
 
     respond_to do |format|
       if @poll.save

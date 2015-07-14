@@ -6,7 +6,7 @@
 		<ul class="list-polls">
 		<% @polls.each do |poll| %>
 			<li>
-				<h3><%= link_to poll.name, show_poll_url(poll.permalink) %></h3>
+				<h3><%= link_to poll.name, poll_url(poll) %></h3>
 				<p class="description"><span class="time"><%= poll_time(poll) %></span></p>
 				<% if can? :update, poll %>
 					<div class="meta">

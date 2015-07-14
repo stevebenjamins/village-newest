@@ -9,21 +9,27 @@ Village::Application.routes.draw do
   get "submit-a-story" => "posts#submit", :as => :submit_a_story
 
   resources :articles
-  resources :posts
-
-  # Comments
-  resources :comments do
-    member do
-      get "parent-reply", to: "comments#parent_reply", :as => :parent_reply
-      put "vote", to: "comments#vote"
-      put "removevote", to: "comments#removevote"
+  get 'posts/:posts_id/link_comments' => 'comments#link_comments', :as => :link_comments
+  resources :posts do
+    resources :comments do
+      member do
+        get "parent-reply", to: "comments#parent_reply", :as => :parent_reply
+        put "vote", to: "comments#vote"
+        put "removevote", to: "comments#removevote"
+      end
     end
   end
-  get "comments/:type/:id" => "comments#show", :as => 'show_comments'
-
+  
   # Polls
-  resources :polls
-  get "polls/show/:permalink" => "polls#show", :as => 'show_poll'
+  resources :polls do
+    resources :comments do
+      member do
+        get "parent-reply", to: "comments#parent_reply", :as => :parent_reply
+        put "vote", to: "comments#vote"
+        put "removevote", to: "comments#removevote"
+      end
+    end
+  end
   resources :poll_items do
     member do
       put "vote", to: "poll_items#vote"
@@ -31,7 +37,6 @@ Village::Application.routes.draw do
     end
   end  
 
-  get 'link_comments/:id' => 'comments#link_comments', :as => :link_comments
   get 'comments/highlight/:id' => 'comments#highlight', :as => :highlight_comment
   get 'feed' => 'posts#feed'
   get 'comments-feed' => 'comments#feed'

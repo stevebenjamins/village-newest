@@ -1,8 +1,13 @@
 <div class="voter">
 	<% if current_user %>
 		<span>
-		<%= link_to comment.votes_for.count, vote_comment_path(comment), :class => 'have_not_voted', method: :put, :remote => true if !current_user.voted_for? comment %>
-		<%= link_to comment.votes_for.count, removevote_comment_path(comment),:class => 'have-voted', method: :put, :remote => true  if current_user.voted_for? comment %>
+		<% if comment.commentable_type == "Poll" %>
+			<%= link_to comment.votes_for.count, vote_poll_comment_path(@commentable.id, comment), :class => 'have_not_voted', method: :put, :remote => true if !current_user.voted_for? comment  %>
+			<%= link_to comment.votes_for.count, removevote_poll_comment_path(@commentable.id, comment),:class => 'have-voted', method: :put, :remote => true  if current_user.voted_for? comment %>
+		<% elsif comment.commentable_type == "Post" %>
+			<%= link_to comment.votes_for.count, vote_post_comment_path(@commentable.id, comment), :class => 'have_not_voted', method: :put, :remote => true if !current_user.voted_for? comment  %>
+			<%= link_to comment.votes_for.count, removevote_post_comment_path(@commentable.id, comment),:class => 'have-voted', method: :put, :remote => true  if current_user.voted_for? comment %>
+		<% end %>
 		</span>
 	<% else %>
 		<span><%= link_to comment.votes_for.count, "javascript:;", :class => 'voter-no-user' %></span>

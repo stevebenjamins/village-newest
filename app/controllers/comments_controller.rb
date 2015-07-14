@@ -1,31 +1,22 @@
 class CommentsController < ApplicationController
   
-  def feed
-    @comments = Comment.find_all_by_commentable_type("Post")
-    render :template => 'comments/feed.rss.builder', :layout => false
-  end
-  
-  def show
-    @parent_item = Post.find(params[:id])  if params[:type] == "posts"
-    @parent_item = Poll.find(params[:id])  if params[:type] == "polls"
-    @comments = @parent_item.comments  
+  def index 
+    @commentable = find_commentable
+    @comments = @commentable.comments
     @comment = Comment.new
     respond_to do |format|
       format.js
     end    
   end
   
-  def highlight
-    @comment = Comment.find(params[:id])
-    @comment.highlight = true
-    @comment.save 
-    
-    respond_to do |format|
-      format.js
-    end    
+  def feed
+    @comments = Comment.find_all_by_commentable_type("Post")
+    render :template => 'comments/feed.rss.builder', :layout => false
   end
   
   def link_comments
+    @commentable = find_commentable
+    @comments = @commentable.comments
 
    # Day 1
    from   = (Time.zone.now).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
@@ -61,8 +52,8 @@ class CommentsController < ApplicationController
    to   = (Time.zone.now - 5.day).beginning_of_day.in_time_zone('Eastern Time (US & Canada)')
    @day_7 = Post.where(["created_at >= ? and created_at <= ?", from, to])
 
-    @post = Post.find(params[:id])
-    @comments = @post.comments
+    # @post = Post.find(params[:id])
+    # @comments = @post.comments
     @comment = Comment.new
     respond_to do |format|
       format.html
@@ -71,7 +62,8 @@ class CommentsController < ApplicationController
   end
     
   def create
-    @comment = Comment.new(post_params)
+    @commentable = find_commentable
+    @comment = @commentable.comments.build(post_params)
     @comment.user_id = current_user.id
     authorize! :create, @comment
     @comment.save
@@ -85,10 +77,9 @@ class CommentsController < ApplicationController
   end
 
    def parent_reply
+     @commentable = find_commentable
      @comment = Comment.new
-     @parent_comment = Comment.find(params[:id])
-     @parent_id = @parent_comment.id
-     @post = @parent_comment.post
+     @parent_comment = Comment.find_by_id(params[:id])
 
      respond_to do |format|
        format.js
@@ -108,6 +99,7 @@ class CommentsController < ApplicationController
   end
   
   def edit
+    @commentable = find_commentable
     @comment = Comment.find(params[:id])
     @post = @comment.post
     
@@ -117,6 +109,7 @@ class CommentsController < ApplicationController
   end
   
   def update
+    @commentable = find_commentable
     @comment = Comment.find(params[:id])
     authorize! :update, @comment
   
@@ -128,6 +121,8 @@ class CommentsController < ApplicationController
   end
   
   def vote
+    @commentable = find_commentable
+    @comments = @commentable.comments
     @comment = Comment.find(params[:id])
     @comment.liked_by current_user
     respond_to do |format|
@@ -136,6 +131,8 @@ class CommentsController < ApplicationController
   end    
 
   def removevote
+    @commentable = find_commentable
+    @comments = @commentable.comments
     @comment = Comment.find(params[:id])
     @comment.unliked_by current_user
     respond_to do |format|
@@ -148,5 +145,14 @@ class CommentsController < ApplicationController
   def post_params
     params.require(:comment).permit(:comment, :commentable_id, :commentable_type, :user_id, :updated_at, :parent_id)
   end  
+
+  def find_commentable
+    params.each do |name, value|
+      if name =~ /(.+)_id$/
+        return $1.classify.constantize.find(value)
+      end
+    end
+    nil
+  end
 
 end

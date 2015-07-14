@@ -1,6 +1,6 @@
 <div class='comment-form'>
 
-	<%= form_for(@comment, remote: true) do |f| %>
+	<%= form_for([@commentable, @comment], remote: true) do |f| %>
 
 		<% if @comment.errors.any? %>
 		  <div id="error_explanation">
@@ -14,9 +14,7 @@
 		  </div>
 		<% end %>
 	
-		<%= f.hidden_field :commentable_id, :value => @parent_item.id %>
-		<%= f.hidden_field :commentable_type, :value => params[:type].singularize.capitalize %>
-		<%= f.hidden_field :parent_id, :value => @parent_id if @parent_id %>
+		<%= f.hidden_field :parent_id, :value => @parent_comment.id if @parent_comment %>
 		<div class="field">
 			<%= f.text_area :comment %>
 		</div>

@@ -15,17 +15,25 @@
 		
 		<%= render 'voter', :comment => comment %>
 		<% if current_user %>
-			<span><%= link_to "Reply", parent_reply_comment_url(comment), remote: true, :class => 'reply'  %></span> 
+			<span>
+			<%= link_to "Reply", parent_reply_poll_comment_url(@commentable.id, comment), remote: true, :class => 'reply' if comment.commentable_type == "Poll" %>
+			<%= link_to "Reply", parent_reply_post_comment_url(@commentable.id, comment), remote: true, :class => 'reply' if comment.commentable_type == "Post" %>
+			</span> 
 		<% end %>
 		<% if can? :update, comment %>
-			<span><%= link_to "Edit", edit_comment_url(comment), remote: true  %></span> 
+			<span>
+				<%= link_to "Edit", edit_poll_comment_url(@commentable.id, comment), remote: true, :class => 'reply' if comment.commentable_type == "Poll"  %>
+				<%= link_to "Edit", edit_post_comment_url(@commentable.id, comment), remote: true, :class => 'reply' if comment.commentable_type == "Post"  %>
+			</span> 
 		<% end %>
 		<% if can? :destroy, comment %>
-			<span><%= link_to "Delete", comment_url(comment), confirm: 'Are you sure?', method: :delete, remote: true %></span>
+			<span>
+				<%= link_to "Delete", poll_comment_url(@commentable.id, comment), confirm: 'Are you sure?', method: :delete, remote: true, :class => 'reply' if comment.commentable_type == "Poll" %>
+				<%= link_to "Delete", post_comment_url(@commentable.id, comment), confirm: 'Are you sure?', method: :delete, remote: true, :class => 'reply' if comment.commentable_type == "Post" %>
+			</span>
 		<% end %>
 	</div>
 	
-</li>
 	
 	<% if comment.children.first %>
 		<ul><% comment.children.each do |comment_children| %>
@@ -34,3 +42,5 @@
 	<% end %>
 	
 	
+	
+</li>
