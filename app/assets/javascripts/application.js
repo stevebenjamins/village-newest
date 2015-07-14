@@ -37,7 +37,7 @@ $(document).ready(function(){
 		alert("Sorry, you have to login to do that.");
 	})
 	
-  	$('.floating-sidebar').scrollToFixed({ marginTop: 100 });
+  	$('.floating-sidebar').scrollToFixed({ marginTop: 20 });
 	
 	// Sharrre
 	

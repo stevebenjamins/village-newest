@@ -20,7 +20,7 @@ module ApplicationHelper
     if poll.voting_closes.past?
       "Voting finished #{poll.voting_closes.strftime("%b %d %Y")}"
     else
-      "#{distance_of_time_in_words(poll.voting_closes.in_time_zone('Eastern Time (US & Canada)') - Time.now.in_time_zone('Eastern Time (US & Canada)'))} left to vote"
+      "#{distance_of_time_in_words(poll.voting_closes.in_time_zone('Eastern Time (US & Canada)') - Time.now.in_time_zone('Eastern Time (US & Canada)'))} left"
     end
   end
 
