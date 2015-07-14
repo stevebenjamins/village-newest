@@ -38,7 +38,7 @@ class PollsController < ApplicationController
 
     respond_to do |format|
       if @poll.update_attributes(poll_params)
-        format.html { redirect_to show_poll_url(@poll.permalink), notice: 'Updated poll.' }
+        format.html { redirect_to poll_url(@poll), notice: 'Updated poll.' }
       else
         format.html { render action: "edit" }
       end
