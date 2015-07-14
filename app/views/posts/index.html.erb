@@ -1,6 +1,8 @@
 <div class="wrapper">
 		<div class="newsfeed"> 
 
+			<%= render 'shared/sidebar' %>
+<%= @test %>
 			<%= render 'posts', :posts => @day_1 %>
 			<% if @day_1.count != 0 %>
 			<div class="newsletter">

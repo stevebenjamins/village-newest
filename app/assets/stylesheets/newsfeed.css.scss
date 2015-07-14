@@ -1,6 +1,6 @@
-.newsfeed { margin-top: 30px; 
+.newsfeed { margin-top: 30px; position: relative;
 
-	ul { list-style: none; margin:0 0 80px 0; padding: 0; 
+	ul.stories { list-style: none; margin:0 0 80px 0; padding: 0; 
 		li { position: relative; padding: 13px 0; 
 			h3 {  margin: 0; font-size: 17px; font-weight: 500;  
 				a { text-decoration: none; color: #5f696a; }

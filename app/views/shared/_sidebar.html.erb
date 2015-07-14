@@ -1,0 +1,4 @@
+<ul class="sidebar floating-sidebar">
+	<li class="<%= "active" if @sidebar_active == "news" %>"><%= link_to "News", root_url, :class => 'news' %></li>
+	<li class="<%= "active" if @sidebar_active == "polls" %>"><%= link_to "Polls", polls_url, :class => 'polls' %></li>
+</ul>

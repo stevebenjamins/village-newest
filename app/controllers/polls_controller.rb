@@ -1,4 +1,5 @@
 class PollsController < ApplicationController
+  before_filter :set_active_link
     
   def index
     @polls = Poll.all
@@ -53,7 +54,11 @@ class PollsController < ApplicationController
       format.html { redirect_to root_url, notice: 'Deleted poll.' }
     end
   end
-  
+
+  def set_active_link
+    @sidebar_active = "polls"
+  end
+    
   private
 
   def poll_params

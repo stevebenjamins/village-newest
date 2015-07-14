@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_filter :set_active_link
 
   def feed
     # @posts = Post.all
@@ -104,6 +105,10 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to root_url, notice: 'Deleted post.' }
     end
+  end
+  
+  def set_active_link
+    @sidebar_active = "news"
   end
   
   private

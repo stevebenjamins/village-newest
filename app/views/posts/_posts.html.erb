@@ -1,6 +1,6 @@
 <% if posts.first %>
 	<h2 class="heading"><span><%= newsfeed_date(posts.first.created_at) %></span></h2>
-	<ul>
+	<ul class="stories">
 		<!-- Featured Post -->
 		<% posts.each_with_index do |post, index| %>
 			<% if post.featured %>

@@ -1,4 +1,4 @@
-.polls {
+.polls { position: relative;
 	
 	.list-polls { list-style: none; margin: 30px 0 0 0; padding: 0; 
 		li { border: 1px solid #DDD; position: relative; text-align: center; padding: 15px 0;
@@ -39,3 +39,14 @@
 	
 }
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+	.show-poll h1 { text-align: center; }
+	.poll-items { 
+		li { padding: 20px 0 0 130px !important;
+			img { width: 110px !important; }
+			h4 { padding-right: 50px; }
+			.voter a { top: 10px !important; }
+		}
+	}
+}

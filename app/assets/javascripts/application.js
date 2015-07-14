@@ -37,9 +37,7 @@ $(document).ready(function(){
 		alert("Sorry, you have to login to do that.");
 	})
 	
-	// $(".newsfeed ul li").hover(function(){
-	// 	$('.meta', this).toggle();
-	// });
+  	$('.floating-sidebar').scrollToFixed({ marginTop: 100 });
 	
 	// Sharrre
 	
