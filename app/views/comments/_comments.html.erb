@@ -3,8 +3,8 @@
 	<div class="heading">
 		<h3>Comments</h3>
 		<p>
-			<%= link_to raw(@commentable.headline), @commentable.url, :rel => "nofollow", :target => '_blank' if @comments.first.commentable_type == 'Post' %>
-			<%= @commentable.name if @comments.first.commentable_type == 'Poll' %>
+			<%= link_to raw(@commentable.headline), @commentable.url, :rel => "nofollow", :target => '_blank' if @commentable.class.name == 'Post' %>
+			<%= @commentable.name if @commentable.class.name == 'Poll' %>
 		</p>
 	</div>
 	
