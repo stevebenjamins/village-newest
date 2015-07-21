@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   devise :timeoutable, :timeout_in => 7.days
 
   acts_as_voter
-  validates :name, presence: true
+  # validates :name, presence: true
 
   def self.from_omniauth(auth)
     where(provider: auth.provider, uid: auth.uid).first_or_create do |user|
