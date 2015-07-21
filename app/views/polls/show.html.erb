@@ -24,7 +24,7 @@
 					<% cycle_variable += 1 %>
 					<% if cycle_variable == 4 %>
 						<% if !current_user %>
-							<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to vote. <span>We'll never post to your feed.</span><% end %>
+							<%= link_to new_user_registration_url, :class => 'login-box' do %>Register to vote. <span>It only takes 25 seconds.</span><% end %>
 						<% end %>
 						<% cycle_variable = 0 %>
 					<% end %>
