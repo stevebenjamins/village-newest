@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   def thanks
   end
 
-  after_filter :store_location
+  # after_filter :store_location
 
   def store_location
     # store last url - this is needed for post-login redirect to whatever the user last visited.
