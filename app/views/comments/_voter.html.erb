@@ -10,6 +10,11 @@
 		<% end %>
 		</span>
 	<% else %>
-		<span><%= link_to comment.votes_for.count, "javascript:;", :class => 'voter-no-user' %></span>
-	<% end %>	
+	<span>
+	<% if comment.commentable_type == "Poll" %>
+		<%= link_to comment.votes_for.count, new_user_registration_url, :class => 'have_not_voted'  %>
+	<% elsif comment.commentable_type == "Post" %>
+		<%= link_to comment.votes_for.count, new_user_registration_url, :class => 'have_not_voted'   %>
+	<% end %>
+	</span>	<% end %>	
 </div>

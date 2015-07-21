@@ -11,7 +11,7 @@
 	<% if current_user %>
 		<%= render 'comments/form' %>
 	<% else %>
-		<%= link_to user_omniauth_authorize_path(:facebook), :class => 'facebook-login' do %>Login with Facebook to add a comment. <span>We'll never post to your feed.</span><% end %>
+		<%= link_to new_user_registration_url(), :class => 'login-box' do %>Register now to add a comment. <span>It takes 25 seconds on average.</span><% end %>
 	<% end %>
 	
 	<ul id="list-comments">

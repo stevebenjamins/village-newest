@@ -5,6 +5,6 @@
 		<%= link_to poll_item.votes_for.count, removevote_poll_item_path(poll_item),:class => 'have-voted', method: :put, :remote => true  if current_user.voted_for? poll_item %>
 		</span>
 	<% else %>
-		<span><%= link_to poll_item.votes_for.count, "javascript:;", :class => 'voter-no-user' %></span>
+		<span><%= link_to poll_item.votes_for.count, new_user_registration_url, :class => 'voter-no-user' %></span>
 	<% end %>	
 </div>

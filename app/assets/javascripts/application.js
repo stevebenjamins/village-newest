@@ -33,10 +33,7 @@ $(document).ready(function(){
 		$('span.clicks').toggle();
 	});
 	
-	$(document.body).on("click", ".voter-no-user", function(){
-		alert("Sorry, you have to login to do that.");
-	})
-	
+
   	$('.floating-sidebar').scrollToFixed({ marginTop: 20 });
 	
 	// Sharrre
